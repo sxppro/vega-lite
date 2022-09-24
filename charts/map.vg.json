@@ -1,4 +1,47 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": "US airports with highest on-time arrival performance"
+  "title": "US airports with highest on-time arrival performance",
+  "width": 800,
+  "height": 400,
+  "layer": [
+    {
+      "data": {
+        "url": "data/st99_d00.json",
+        "format": {
+          "type": "topojson",
+          "feature": "st99_d00"
+        }
+      },
+      "projection": {
+        "type": "albersUsa"
+      },
+      "mark": {
+        "type": "geoshape",
+        "fill": "white",
+        "stroke": "lightgray"
+      }
+    },
+    {
+      "data": {
+        "url": "data/airport_arr_rank_2020.csv"
+      },
+      "projection": {
+        "type": "albersUsa"
+      },
+      "mark": {
+        "type": "circle",
+        "fill": "black"
+      },
+      "encoding": {
+        "longitude": {
+          "field": "longitude",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "latitude",
+          "type": "quantitative"
+        }
+      }
+    }
+  ]
 }

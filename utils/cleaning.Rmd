@@ -38,3 +38,9 @@ airport_arr_rank_2017 <- read_exc('../charts/data/airport_arr_rankings.xlsx', 4,
 airport_arr_rank_2016 <- read_exc('../charts/data/airport_arr_rankings.xlsx', 4, 'D3:F32')
 ```
 
+# Export
+
+```{r export}
+write_csv(airport_arr_rank_2020, '../charts/data/airport_arr_rank_2020.csv')
+```
+
