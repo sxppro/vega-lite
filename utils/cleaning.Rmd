@@ -1,0 +1,40 @@
+---
+title: "Data Vis 2 - Cleaning"
+author: "Josh"
+date: "2022-09-24"
+output: html_document
+---
+
+```{r packages}
+library(tidyverse)
+library(readxl)
+library(naniar)
+library(stringi)
+library(janitor)
+library(fuzzyjoin)
+```
+
+
+# Utils
+
+```{r utils}
+locations <- read_csv('../charts/data/airport_locations.csv') %>% clean_names()
+read_exc <- function(path, sheet, cells) {
+  read_excel(path = path, sheet = sheet, range = cells) %>% 
+    clean_names() %>% 
+    rename(airport_name = 2) %>% 
+    # Join with airport location data
+    fuzzy_left_join(locations, by = c("airport_name" = "iata"), match_fun = stri_detect_fixed)
+}
+```
+
+# Airport Arrival Rankings
+
+```{r}
+airport_arr_rank_2020 <- read_exc('../charts/data/airport_arr_rankings.xlsx', 1, 'D4:F34')
+airport_arr_rank_2019 <- read_exc('../charts/data/airport_arr_rankings.xlsx', 2, 'D4:F34')
+airport_arr_rank_2018 <- read_exc('../charts/data/airport_arr_rankings.xlsx', 3, 'D3:F33')
+airport_arr_rank_2017 <- read_exc('../charts/data/airport_arr_rankings.xlsx', 4, 'D3:F33')
+airport_arr_rank_2016 <- read_exc('../charts/data/airport_arr_rankings.xlsx', 4, 'D3:F32')
+```
+
