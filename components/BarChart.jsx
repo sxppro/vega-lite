@@ -1,12 +1,9 @@
 import { useEffect } from 'react';
-import embed from 'vega-embed';
+import { visualise } from '../utils/charts';
 
 const BarChart = () => {
   useEffect(() => {
-    const visualise = async () => {
-      await embed('#bar-chart', '/api/barchart');
-    };
-    visualise().catch(console.error);
+    visualise('#bar-chart', '/api/barchart').catch(console.error);
   }, []);
   return <div id="bar-chart" className="bar-chart"></div>;
 };
