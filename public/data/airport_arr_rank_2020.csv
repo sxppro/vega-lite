@@ -1,0 +1,11 @@
+rank,airport_name,percent,iata,airport,city,state,country,latitude,longitude
+1,"Honolulu, HI (HNL)",88.44,HNL,Honolulu International,Honolulu,HI,USA,21.31869111,-157.9224072
+2,"Detroit, MI (DTW)",87.96,DTW,Detroit Metropolitan-Wayne County,Detroit,MI,USA,42.21205889,-83.34883583
+3,"Minneapolis/St. Paul, MN (MSP)",87.85,MSP,Minneapolis-St Paul Intl,Minneapolis,MN,USA,44.88054694,-93.2169225
+4,"Atlanta, GA (ATL)",87.41,ATL,William B Hartsfield-Atlanta Intl,Atlanta,GA,USA,33.64044444,-84.42694444
+5,"Salt Lake City, UT (SLC)",87.34,SLC,Salt Lake City Intl,Salt Lake City,UT,USA,40.78838778,-111.9777731
+6,"Baltimore, MD (BWI)",86.76,BWI,Baltimore-Washington International,Baltimore,MD,USA,39.17540167,-76.66819833
+7,"Portland, OR (PDX)",86.43,PDX,Portland Intl,Portland,OR,USA,45.58872222,-122.5975
+8,"Seattle, WA (SEA)",86.36,SEA,Seattle-Tacoma Intl,Seattle,WA,USA,47.44898194,-122.3093131
+9,"Los Angeles, CA (LAX)",86.2,LAX,Los Angeles International,Los Angeles,CA,USA,33.94253611,-118.4080744
+10,"Phoenix, AZ (PHX)",85.86,PHX,Phoenix Sky Harbor International,Phoenix,AZ,USA,33.43416667,-112.0080556
