@@ -3,7 +3,7 @@ import Map from '../components/Map';
 
 const Week9 = () => {
   return (
-    <Container maxW="container.xl" centerContent>
+    <Container maxW="container.xl" centerContent h="calc(100vh - 64px)">
       <Map />
     </Container>
   );

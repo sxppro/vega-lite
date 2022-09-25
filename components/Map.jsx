@@ -6,7 +6,7 @@ const Map = () => {
   useEffect(() => {
     visualise('#map', '/api/map').catch(console.error);
   }, []);
-  return <Box id="map" className="map"></Box>;
+  return <Box id="map" className="map" w="100%" h="100%"></Box>;
 };
 
 export default Map;
