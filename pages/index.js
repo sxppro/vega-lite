@@ -6,8 +6,16 @@ export default function Home() {
     <Container maxW="100vw">
       <main>
         <Center flexDir={'column'}>
+          <Heading
+            p={'8'}
+            size="2xl"
+            bgGradient="linear(to-tr, #efca08, #bbdef0)"
+            bgClip="text"
+          >
+            Data Visualisation—2
+          </Heading>
           <Heading p={'8'} size="2xl">
-            Welcome to My Page 😀
+            Example
           </Heading>
           <BarChart />
         </Center>
