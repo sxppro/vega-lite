@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": "US airports with highest on-time arrival performance",
+  "title": "US airports with highest on-time arrival performance in 2020",
   "width": 800,
   "height": 400,
   "layer": [
@@ -28,10 +28,6 @@
       "projection": {
         "type": "albersUsa"
       },
-      "mark": {
-        "type": "circle",
-        "fill": "black"
-      },
       "encoding": {
         "longitude": {
           "field": "longitude",
@@ -40,8 +36,55 @@
         "latitude": {
           "field": "latitude",
           "type": "quantitative"
+        },
+        "tooltip": [
+          {
+            "field": "airport",
+            "type": "nominal",
+            "title": "Airport"
+          }
+        ]
+      },
+      "layer": [
+        {
+          "mark": {
+            "type": "circle",
+            "fill": "black",
+            "size": 48,
+            "tooltip": true
+          }
+        },
+        {
+          "mark": {
+            "type": "text",
+            "font": "-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
+            "align": "center",
+            "dy": 10
+          },
+          "encoding": {
+            "text": {
+              "field": "airport",
+              "type": "nominal"
+            }
+          }
+        },
+        {
+          "mark": {
+            "type": "text",
+            "font": "-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
+            "fontWeight": "bold",
+            "fontSize": 14,
+            "align": "center",
+            "dy": -10
+          },
+          "encoding": {
+            "text": {
+              "field": "rank",
+              "type": "ordinal"
+            }
+          }
         }
-      }
+      ]
     }
   ]
 }
