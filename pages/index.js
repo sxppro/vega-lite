@@ -1,5 +1,5 @@
 import { Container, Center, Heading } from '@chakra-ui/react';
-import BarChart from '../components/BarChart';
+import GridView from '../components/GridView';
 
 export default function Home() {
   return (
@@ -9,19 +9,15 @@ export default function Home() {
           <Heading
             p={'8'}
             size="2xl"
-            bgGradient="linear(to-tr, #efca08, #bbdef0)"
+            bgGradient="linear(to-tr, #f36364, #f292ed)"
             bgClip="text"
           >
             Data Visualisation—2
           </Heading>
-          <Heading p={'8'} size="2xl">
-            Example
-          </Heading>
-          <BarChart />
         </Center>
       </main>
 
-      <footer></footer>
+      <GridView />
     </Container>
   );
 }
