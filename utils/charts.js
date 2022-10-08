@@ -1,7 +1,7 @@
 import embed from 'vega-embed';
 
-const visualise = async (id, route) => {
-  await embed(id, route);
+const visualise = async (id, route, actions = true) => {
+  await embed(id, route, { actions: actions });
 };
 
 export { visualise };

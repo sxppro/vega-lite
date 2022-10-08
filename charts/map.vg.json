@@ -4,7 +4,7 @@
     "text": "US airports with highest on-time arrival performance in 2020",
     "font": "-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
     "fontWeight": "bold",
-    "fontSize": 24
+    "fontSize": 16
   },
   "width": "container",
   "height": "container",
@@ -80,7 +80,8 @@
             "fontWeight": "bold",
             "fontSize": 14,
             "align": "center",
-            "dy": -10
+            "dy": -10,
+            "fill": "black"
           },
           "encoding": {
             "text": {
