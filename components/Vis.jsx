@@ -9,7 +9,7 @@ const Vis = ({ visId }) => {
     const doAsync = async () => {
       try {
         setLoading(false);
-        await visualise(`#${visId}`, `/api/${visId}`, false);
+        await visualise(`#${visId}`, `/api/schemas/${visId}`, false);
       } catch (err) {
         console.error(err);
       }
