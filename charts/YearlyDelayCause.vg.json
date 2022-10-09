@@ -4,8 +4,8 @@
     "url": "./data/delay_cause_yearly.csv"
   },
   "title": "Yearly percentage of flights delayed by cause",
-  "width": 600,
-  "height": 300,
+  "width": "container",
+  "height": "container",
   "encoding": {
     "x": {
       "field": "year",
@@ -29,7 +29,6 @@
         "input": "select",
         "options": [
           null,
-          "on_time",
           "delay_carrier",
           "delay_late",
           "delay_security",
@@ -39,7 +38,6 @@
         ],
         "labels": [
           "Show all",
-          "On time",
           "Carrier",
           "Previous late aircraft",
           "Security",
@@ -91,7 +89,8 @@
             "range": "category"
           },
           "legend": {
-            "title": "Delay Cause"
+            "title": "Delay Cause",
+            "labelExpr": "datum.label === 'delay_cancel_diverted' ? 'Cancelled/diverted' :  datum.label === 'delay_carrier' ? 'Carrier' : datum.label === 'delay_late' ? 'Previous late aircraft' : datum.label === 'delay_nas' ? 'National Aviation System' : datum.label === 'delay_security' ? 'Security' : 'Weather'"
           }
         }
       }
@@ -101,9 +100,7 @@
         {
           "pivot": "type",
           "value": "value",
-          "groupby": [
-            "year"
-          ]
+          "groupby": ["year"]
         }
       ],
       "mark": "rule",
@@ -165,12 +162,31 @@
           "name": "hover",
           "select": {
             "type": "point",
-            "fields": [
-              "year"
-            ],
+            "fields": ["year"],
             "nearest": true,
             "on": "mouseover",
             "clear": "mouseout"
+          }
+        }
+      ]
+    },
+    {
+      "encoding": {
+        "x": { "datum": { "year": 2020 } }
+      },
+      "layer": [
+        {
+          "mark": "rule"
+        },
+        {
+          "mark": {
+            "type": "text",
+            "align": "right",
+            "baseline": "bottom",
+            "dx": -2,
+            "dy": -134,
+            "x": "width",
+            "text": "Pandemic"
           }
         }
       ]

@@ -8,9 +8,9 @@ import {
   Text,
 } from '@chakra-ui/react';
 import StatsHighlight from '../components/StatsHighlight';
-import AirportRankingMap from '../components/AirportRankingMap';
 import AirportFlightsMap from '../components/AirportFlightsMap';
 import BestAirports from '../components/BestAirports';
+import YearlyDelayCause from '../components/YearlyDelayCause';
 
 export default function Home() {
   return (
@@ -32,7 +32,7 @@ export default function Home() {
               <Box borderWidth={'1px'} borderRadius={12} w="50%" mr={2} p={4}>
                 <AirportFlightsMap />
                 <Heading size={'lg'} mt={2}>
-                  US Airports by Number of Arriving Flights
+                  Airports by Number of Arriving Flights
                 </Heading>
                 <Text fontSize={'lg'} mt={2}>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
@@ -85,7 +85,10 @@ export default function Home() {
           <VStack spacing={4} w="100%">
             <Flex alignContent={'center'} flexDir={'row'} w="100%" h="640px">
               <Box borderWidth={'1px'} borderRadius={12} w="50%" mr={2} p={4}>
-                <Heading size={'lg'} mt={2}></Heading>
+                <YearlyDelayCause />
+                <Heading size={'lg'} mt={2}>
+                  Yearly Flight Delay Causes
+                </Heading>
                 <Text fontSize={'lg'} mt={2}>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                   do eiusmod tempor incididunt ut labore et dolore magna aliqua.
