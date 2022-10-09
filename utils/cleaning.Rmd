@@ -38,9 +38,70 @@ airport_arr_rank_2017 <- read_exc('../charts/data/airport_arr_rankings.xlsx', 4,
 airport_arr_rank_2016 <- read_exc('../charts/data/airport_arr_rankings.xlsx', 4, 'D3:F32')
 ```
 
+# Airport Delay Causes
+
+```{r}
+delay_data <- read_csv('../charts/data/Airline_Delay_Cause.csv') %>% 
+  clean_names() %>% 
+  drop_na() %>% 
+  separate(airport_name, into = c("location", "airport_name"), sep = ": ") %>% 
+  rename(arr_delay_mins = arr_delay, 
+         carrier_delay_mins = carrier_delay, 
+         weather_delay_mins = weather_delay, 
+         nas_delay_mins = nas_delay, 
+         security_delay_mins = security_delay, 
+         late_aircraft_delay_mins = late_aircraft_delay)
+delay_10_data <- delay_data %>% 
+  filter(airport %in% c('ATL', 'DFW', 'DEN', 'ORD', 'LAX', 'CLT', 'MCO', 'LAS', 'PHX', 'MIA')) 
+```
+
+```{r}
+# Yearly on-time data
+delay_cause_yearly <- delay_data %>% 
+  group_by(year) %>% 
+  summarise(delay_carrier = sum(carrier_ct)/sum(arr_flights) * 100,
+            delay_late = sum(late_aircraft_ct)/sum(arr_flights) * 100,
+            delay_security = sum(security_ct)/sum(arr_flights) * 100,
+            delay_nas = sum(nas_ct)/sum(arr_flights) * 100,
+            delay_weather = sum(weather_ct)/sum(arr_flights) * 100,
+            delay_cancel_diverted = (sum(arr_cancelled) + sum(arr_diverted))/sum(arr_flights) * 100) %>% 
+  pivot_longer(-year, names_to = "type", values_to = "value")
+```
+
+```{r}
+# Top airports by on-time data (YTD 2022)
+top_airports <- delay_data %>% 
+  filter(year == 2022, arr_flights > 1000) %>% 
+  group_by(airport) %>% 
+  summarise(on_time = (1 - (sum(arr_del15)/sum(arr_flights))) * 100,
+            arr_flights = sum(arr_flights)) %>% 
+  arrange(desc(on_time)) %>% 
+  top_n(10, on_time) %>% 
+  ungroup() %>% 
+  left_join(delay_data %>% select(airport, airport_name), by = "airport") %>% 
+  unique()
+
+# Top airports by arrival flights (YTD 2022)
+top_airports_flights <- delay_data %>% 
+  filter(year == 2022, arr_flights > 1000) %>% 
+  group_by(airport) %>% 
+  summarise(arr_flights = sum(arr_flights)) %>% 
+  top_n(10, arr_flights) %>%
+  arrange(desc(arr_flights)) %>% 
+  left_join(locations %>% select(-airport), by = c("airport" = "iata")) %>%
+  # Just to ensure name consistency
+  left_join(delay_data %>% select(airport, airport_name), by = "airport") %>% 
+  select(airport, airport_name, arr_flights, latitude, longitude) %>% 
+  unique()
+```
+
+
 # Export
 
 ```{r export}
-write_csv(airport_arr_rank_2020, '../charts/data/airport_arr_rank_2020.csv')
+write_csv(airport_arr_rank_2020 %>% slice_head(n = 10), '../charts/data/airport_arr_rank_2020.csv')
+write_csv(delay_cause_yearly, '../charts/data/delay_cause_yearly.csv')
+write_csv(top_airports, '../charts/data/top_airports.csv')
+write_csv(top_airports_flights, '../charts/data/top_airports_flights.csv')
 ```
 
