@@ -8,9 +8,7 @@ import {
   Text,
 } from '@chakra-ui/react';
 import StatsHighlight from '../components/StatsHighlight';
-import AirportFlightsMap from '../components/AirportFlightsMap';
-import BestAirports from '../components/BestAirports';
-import YearlyDelayCause from '../components/YearlyDelayCause';
+import Vis from '../components/Vis';
 
 export default function Home() {
   return (
@@ -30,7 +28,7 @@ export default function Home() {
             <StatsHighlight average={'79.2%'} best={'88.2%'} />
             <Flex alignContent={'center'} flexDir={'row'} w="100%" h="640px">
               <Box borderWidth={'1px'} borderRadius={12} w="50%" mr={2} p={4}>
-                <AirportFlightsMap />
+                <Vis visId={'airportFlightsMap'} />
                 <Heading size={'lg'} mt={2}>
                   Airports by Number of Arriving Flights
                 </Heading>
@@ -44,7 +42,7 @@ export default function Home() {
                 </Text>
               </Box>
               <Box borderWidth={'1px'} borderRadius={12} w="50%" ml={2} p={4}>
-                <BestAirports />
+                <Vis visId={'bestAirports'} />
                 <Heading size={'lg'} mt={2}>
                   Top 10 Airports by On-time Arrivals
                 </Heading>
@@ -85,7 +83,7 @@ export default function Home() {
           <VStack spacing={4} w="100%">
             <Flex alignContent={'center'} flexDir={'row'} w="100%" h="640px">
               <Box borderWidth={'1px'} borderRadius={12} w="50%" mr={2} p={4}>
-                <YearlyDelayCause />
+                <Vis visId={'yearlyDelayCause'} />
                 <Heading size={'lg'} mt={2}>
                   Yearly Flight Delay Causes
                 </Heading>

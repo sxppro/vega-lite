@@ -1,10 +1,10 @@
 import { Container } from '@chakra-ui/react';
-import AirportRankingMap from '../components/AirportRankingMap';
+import Vis from '../components/Vis';
 
 const Week9 = () => {
   return (
     <Container maxW="container.xl" centerContent h="calc(100vh - 64px)">
-      <AirportRankingMap />
+      <Vis visId={'airportOntimeRankingMap'} />
     </Container>
   );
 };
