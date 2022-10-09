@@ -9,6 +9,7 @@ import {
 } from '@chakra-ui/react';
 import StatsHighlight from '../components/StatsHighlight';
 import AirportRankingMap from '../components/AirportRankingMap';
+import AirportFlightsMap from '../components/AirportFlightsMap';
 import BestAirports from '../components/BestAirports';
 
 export default function Home() {
@@ -29,9 +30,9 @@ export default function Home() {
             <StatsHighlight average={'79.2%'} best={'88.2%'} />
             <Flex alignContent={'center'} flexDir={'row'} w="100%" h="640px">
               <Box borderWidth={'1px'} borderRadius={12} w="50%" mr={2} p={4}>
-                <AirportRankingMap />
+                <AirportFlightsMap />
                 <Heading size={'lg'} mt={2}>
-                  US Airports by On-time Arrival Performance in 2020
+                  US Airports by Number of Arriving Flights
                 </Heading>
                 <Text fontSize={'lg'} mt={2}>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed

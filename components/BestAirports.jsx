@@ -4,7 +4,7 @@ import { Box } from '@chakra-ui/react';
 
 const BarChart = () => {
   useEffect(() => {
-    visualise('#best-airports-chart', '/api/bestairports', false).catch(
+    visualise('#best-airports-chart', '/api/bestAirports', false).catch(
       console.error
     );
   }, []);

@@ -1,0 +1,102 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "",
+    "font": "-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
+    "fontWeight": "bold",
+    "fontSize": 16
+  },
+  "width": "container",
+  "height": "container",
+  "layer": [
+    {
+      "data": {
+        "url": "data/st99_d00.json",
+        "format": {
+          "type": "topojson",
+          "feature": "st99_d00"
+        }
+      },
+      "projection": {
+        "type": "albersUsa"
+      },
+      "mark": {
+        "type": "geoshape",
+        "fill": "white",
+        "stroke": "lightgray"
+      }
+    },
+    {
+      "data": {
+        "url": "data/top_airports_flights.csv"
+      },
+      "projection": {
+        "type": "albersUsa"
+      },
+      "encoding": {
+        "longitude": {
+          "field": "longitude",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "latitude",
+          "type": "quantitative"
+        },
+        "tooltip": [
+          {
+            "field": "airport",
+            "type": "nominal",
+            "title": "Airport Code"
+          },
+          {
+            "field": "airport_name",
+            "type": "nominal",
+            "title": "Airport"
+          },
+          {
+            "field": "arr_flights",
+            "type": "quantitative",
+            "title": "Flights",
+            "format": ","
+          }
+        ]
+      },
+      "layer": [
+        {
+          "mark": {
+            "type": "circle",
+            "fill": "black",
+            "tooltip": true
+          },
+          "encoding": {
+            "size": {
+              "field": "arr_flights",
+              "type": "quantitative",
+              "scale": {
+                "type": "linear"
+              },
+              "legend": {
+                "title": "Flights"
+              }
+            }
+          }
+        },
+        {
+          "mark": {
+            "type": "text",
+            "font": "-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
+            "fontSize": 16,
+            "align": "center",
+            "dy": -16
+          },
+          "encoding": {
+            "text": {
+              "field": "airport",
+              "type": "nominal"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
