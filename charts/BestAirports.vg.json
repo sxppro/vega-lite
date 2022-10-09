@@ -1,0 +1,41 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": ""
+  },
+  "width": "container",
+  "height": "container",
+  "data": {
+    "url": "./data/top_airports.csv"
+  },
+  "mark": "bar",
+  "encoding": {
+    "x": {
+      "field": "on_time",
+      "type": "quantitative",
+      "title": "On time arrivals (%)"
+    },
+    "y": {
+      "field": "airport",
+      "type": "nominal",
+      "sort": {
+        "field": "on_time",
+        "order": "descending"
+      },
+      "title": "Airport"
+    },
+    "tooltip": [
+      {
+        "field": "airport_name",
+        "type": "nominal",
+        "title": "Airport"
+      },
+      {
+        "field": "on_time",
+        "type": "quantitative",
+        "title": "On time (%)",
+        "format": ".4"
+      }
+    ]
+  }
+}
