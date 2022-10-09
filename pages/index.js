@@ -15,7 +15,7 @@ export default function Home() {
   return (
     <main>
       <Container maxW="container.xl">
-        <Center flexDir={'column'}>
+        <Center flexDir={'column'} mb={4}>
           <Heading
             p={'8'}
             size="2xl"
@@ -70,26 +70,6 @@ export default function Home() {
 
           <VStack spacing={4} w="100%">
             <StatsHighlight average={'80.0%'} best={'85.0%'} />
-            <Flex alignContent={'center'} flexDir={'row'} w="100%" h="640px">
-              <Box borderWidth={'1px'} borderRadius={12} w="50%" mr={2} p={4}>
-                <Heading size={'lg'} mt={2}></Heading>
-                <Text fontSize={'lg'} mt={2}>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                  laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-                  irure dolor in reprehenderit in voluptate velit esse cillum
-                  dolore eu fugiat nulla pariatur.
-                </Text>
-              </Box>
-              <Box
-                borderWidth={'1px'}
-                borderRadius={12}
-                w="50%"
-                ml={2}
-                p={4}
-              ></Box>
-            </Flex>
           </VStack>
 
           <Heading
@@ -102,7 +82,6 @@ export default function Home() {
           </Heading>
 
           <VStack spacing={4} w="100%">
-            <StatsHighlight average={'80.0%'} best={'85.0%'} />
             <Flex alignContent={'center'} flexDir={'row'} w="100%" h="640px">
               <Box borderWidth={'1px'} borderRadius={12} w="50%" mr={2} p={4}>
                 <Heading size={'lg'} mt={2}></Heading>

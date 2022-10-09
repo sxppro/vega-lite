@@ -8,13 +8,7 @@
   "data": {
     "url": "./data/top_airports.csv"
   },
-  "mark": "bar",
   "encoding": {
-    "x": {
-      "field": "on_time",
-      "type": "quantitative",
-      "title": "On time arrivals (%)"
-    },
     "y": {
       "field": "airport",
       "type": "nominal",
@@ -24,18 +18,39 @@
       },
       "title": "Airport"
     },
-    "tooltip": [
-      {
-        "field": "airport_name",
-        "type": "nominal",
-        "title": "Airport"
-      },
-      {
-        "field": "on_time",
-        "type": "quantitative",
-        "title": "On time (%)",
-        "format": ".4"
+    "x": {
+      "field": "on_time",
+      "type": "quantitative",
+      "title": "On time arrivals (%)"
+    }
+  },
+  "layer": [
+    {
+      "mark": "bar",
+      "encoding": {
+        "tooltip": [
+          {
+            "field": "airport_name",
+            "type": "nominal",
+            "title": "Airport"
+          },
+          {
+            "field": "on_time",
+            "type": "quantitative",
+            "title": "On time (%)",
+            "format": ".4"
+          }
+        ]
       }
-    ]
-  }
+    },
+    {
+      "mark": { "type": "text", "align": "right", "xOffset": -4 },
+      "encoding": {
+        "text": {
+          "field": "airport_name",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
 }
