@@ -3,7 +3,7 @@
   "data": {
     "url": "./data/delay_cause_yearly.csv"
   },
-  "title": "Yearly percentage of flights delayed by cause",
+  "title": "",
   "width": "container",
   "height": "container",
   "encoding": {

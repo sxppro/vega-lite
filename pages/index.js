@@ -26,13 +26,24 @@ export default function Home() {
 
           <VStack spacing={4} w="100%">
             <StatsHighlight average={'79.2%'} best={'88.2%'} />
-            <Flex alignContent={'center'} flexDir={'row'} w="100%" h="640px">
-              <Box borderWidth={'1px'} borderRadius={12} w="50%" mr={2} p={4}>
+            <Flex
+              alignContent={'center'}
+              flexDir={'row'}
+              flexWrap={{ base: 'wrap', md: 'nowrap' }}
+              w="100%"
+            >
+              <Box
+                borderWidth={'1px'}
+                borderRadius={12}
+                w={{ base: '100%', md: '50%' }}
+                mr={{ base: 0, md: 2 }}
+                p={4}
+              >
                 <Vis visId={'airportFlightsMap'} />
-                <Heading size={'lg'} mt={2}>
+                <Heading size={'lg'} pt={2}>
                   Airports by Number of Arriving Flights
                 </Heading>
-                <Text fontSize={'lg'} mt={2}>
+                <Text fontSize={'lg'} pt={2}>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                   do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                   Ut enim ad minim veniam, quis nostrud exercitation ullamco
@@ -41,7 +52,13 @@ export default function Home() {
                   dolore eu fugiat nulla pariatur.
                 </Text>
               </Box>
-              <Box borderWidth={'1px'} borderRadius={12} w="50%" ml={2} p={4}>
+              <Box
+                borderWidth={'1px'}
+                borderRadius={12}
+                w={{ base: '100%', md: '50%' }}
+                ml={{ base: 0, md: 2 }}
+                p={4}
+              >
                 <Vis visId={'bestAirports'} />
                 <Heading size={'lg'} mt={2}>
                   Top 10 Airports by On-time Arrivals
@@ -69,10 +86,21 @@ export default function Home() {
 
           <VStack spacing={4} w="100%">
             <StatsHighlight average={'80.0%'} best={'85.0%'} />
-            <Flex alignContent={'center'} flexDir={'row'} w="100%" h="640px">
-              <Box borderWidth={'1px'} borderRadius={12} w="50%" mr={2} p={4}>
-                <Box borderWidth={'1px'} w="100%" h="60%">
-                  <Center h="100%">
+            <Flex
+              alignContent={'center'}
+              flexDir={'row'}
+              flexWrap={{ base: 'wrap', md: 'nowrap' }}
+              w="100%"
+            >
+              <Box
+                borderWidth={'1px'}
+                borderRadius={12}
+                w={{ base: '100%', md: '50%' }}
+                mr={{ base: 0, md: 2 }}
+                p={4}
+              >
+                <Box borderWidth={'1px'} w="100%">
+                  <Center minH="360px">
                     <Text>Placeholder</Text>
                   </Center>
                 </Box>
@@ -88,9 +116,15 @@ export default function Home() {
                   dolore eu fugiat nulla pariatur.
                 </Text>
               </Box>
-              <Box borderWidth={'1px'} borderRadius={12} w="50%" ml={2} p={4}>
-                <Box borderWidth={'1px'} w="100%" h="60%">
-                  <Center h="100%">
+              <Box
+                borderWidth={'1px'}
+                borderRadius={12}
+                w={{ base: '100%', md: '50%' }}
+                ml={{ base: 0, md: 2 }}
+                p={4}
+              >
+                <Box borderWidth={'1px'} w="100%">
+                  <Center minH="360px">
                     <Text>Placeholder</Text>
                   </Center>
                 </Box>
@@ -119,8 +153,19 @@ export default function Home() {
           </Heading>
 
           <VStack spacing={4} w="100%">
-            <Flex alignContent={'center'} flexDir={'row'} w="100%" h="640px">
-              <Box borderWidth={'1px'} borderRadius={12} w="50%" mr={2} p={4}>
+            <Flex
+              alignContent={'center'}
+              flexDir={'row'}
+              flexWrap={{ base: 'wrap', md: 'nowrap' }}
+              w="100%"
+            >
+              <Box
+                borderWidth={'1px'}
+                borderRadius={12}
+                w={{ base: '100%', md: '50%' }}
+                mr={{ base: 0, md: 2 }}
+                p={4}
+              >
                 <Vis visId={'yearlyDelayCause'} />
                 <Heading size={'lg'} mt={2}>
                   Yearly Flight Delay Causes
@@ -134,9 +179,15 @@ export default function Home() {
                   dolore eu fugiat nulla pariatur.
                 </Text>
               </Box>
-              <Box borderWidth={'1px'} borderRadius={12} w="50%" ml={2} p={4}>
-                <Box borderWidth={'1px'} w="100%" h="60%">
-                  <Center h="100%">
+              <Box
+                borderWidth={'1px'}
+                borderRadius={12}
+                w={{ base: '100%', md: '50%' }}
+                ml={{ base: 0, md: 2 }}
+                p={4}
+              >
+                <Box borderWidth={'1px'} w="100%">
+                  <Center minH="360px">
                     <Text>Placeholder</Text>
                   </Center>
                 </Box>
