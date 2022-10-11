@@ -12,11 +12,11 @@
     "y": {
       "field": "airport",
       "type": "nominal",
+      "title": "Airport",
       "sort": {
         "field": "on_time",
         "order": "descending"
-      },
-      "title": "Airport"
+      }
     },
     "x": {
       "field": "on_time",
@@ -44,7 +44,12 @@
       }
     },
     {
-      "mark": { "type": "text", "align": "right", "xOffset": -4 },
+      "mark": {
+        "type": "text",
+        "align": "right",
+        "xOffset": -4,
+        "color": "white"
+      },
       "encoding": {
         "text": {
           "field": "airport_name",

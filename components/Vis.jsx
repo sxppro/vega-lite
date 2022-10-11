@@ -20,7 +20,7 @@ const Vis = ({ visId }) => {
   return (
     <Box id={visId} w="100%" minH={{ base: '256px', md: '360px' }}>
       {loading ? (
-        <Center h="100%">
+        <Center minH={'inherit'}>
           <Spinner size={'xl'} />
         </Center>
       ) : (
