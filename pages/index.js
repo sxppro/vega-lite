@@ -2,7 +2,8 @@ import {
   Container,
   Center,
   Heading,
-  Flex,
+  Divider,
+  Stack,
   VStack,
   Box,
   Text,
@@ -17,6 +18,15 @@ export default function Home() {
         <Center flexDir={'column'} mb={4}>
           <Heading
             p={'8'}
+            size="4xl"
+            bgGradient="linear(to-tr, #5b6cf9, #ea98da)"
+            bgClip="text"
+          >
+            US Flight Delays
+          </Heading>
+          <Divider />
+          <Heading
+            p={'8'}
             size="2xl"
             bgGradient="linear(to-tr, #f36364, #f292ed)"
             bgClip="text"
@@ -24,19 +34,18 @@ export default function Home() {
             Airports
           </Heading>
 
-          <VStack spacing={4} w="100%">
+          <VStack spacing={8} w="100%">
             <StatsHighlight average={'79.2%'} best={'88.2%'} />
-            <Flex
+            <Stack
               alignContent={'center'}
-              flexDir={'row'}
-              flexWrap={{ base: 'wrap', md: 'nowrap' }}
+              direction={['column', 'row']}
+              spacing={4}
               w="100%"
             >
               <Box
                 borderWidth={'1px'}
                 borderRadius={12}
                 w={{ base: '100%', md: '50%' }}
-                mr={{ base: 0, md: 2 }}
                 p={4}
               >
                 <Vis visId={'airportFlightsMap'} />
@@ -56,7 +65,6 @@ export default function Home() {
                 borderWidth={'1px'}
                 borderRadius={12}
                 w={{ base: '100%', md: '50%' }}
-                ml={{ base: 0, md: 2 }}
                 p={4}
               >
                 <Vis visId={'bestAirports'} />
@@ -72,7 +80,7 @@ export default function Home() {
                   dolore eu fugiat nulla pariatur.
                 </Text>
               </Box>
-            </Flex>
+            </Stack>
           </VStack>
 
           <Heading
@@ -86,17 +94,16 @@ export default function Home() {
 
           <VStack spacing={4} w="100%">
             <StatsHighlight average={'80.0%'} best={'85.0%'} />
-            <Flex
+            <Stack
               alignContent={'center'}
-              flexDir={'row'}
-              flexWrap={{ base: 'wrap', md: 'nowrap' }}
+              direction={['column', 'row']}
+              spacing={4}
               w="100%"
             >
               <Box
                 borderWidth={'1px'}
                 borderRadius={12}
                 w={{ base: '100%', md: '50%' }}
-                mr={{ base: 0, md: 2 }}
                 p={4}
               >
                 <Box borderWidth={'1px'} w="100%">
@@ -120,7 +127,6 @@ export default function Home() {
                 borderWidth={'1px'}
                 borderRadius={12}
                 w={{ base: '100%', md: '50%' }}
-                ml={{ base: 0, md: 2 }}
                 p={4}
               >
                 <Box borderWidth={'1px'} w="100%">
@@ -140,30 +146,29 @@ export default function Home() {
                   dolore eu fugiat nulla pariatur.
                 </Text>
               </Box>
-            </Flex>
+            </Stack>
           </VStack>
 
           <Heading
             p={'8'}
             size="2xl"
-            bgGradient="linear(to-tr, #ffed00, #f7a2a1)"
+            bgGradient="linear(to-tr, #f7a2a1, #ffed00)"
             bgClip="text"
           >
             Time Period
           </Heading>
 
           <VStack spacing={4} w="100%">
-            <Flex
+            <Stack
               alignContent={'center'}
-              flexDir={'row'}
-              flexWrap={{ base: 'wrap', md: 'nowrap' }}
+              direction={['column', 'row']}
+              spacing={4}
               w="100%"
             >
               <Box
                 borderWidth={'1px'}
                 borderRadius={12}
                 w={{ base: '100%', md: '50%' }}
-                mr={{ base: 0, md: 2 }}
                 p={4}
               >
                 <Vis visId={'yearlyDelayCause'} />
@@ -183,7 +188,6 @@ export default function Home() {
                 borderWidth={'1px'}
                 borderRadius={12}
                 w={{ base: '100%', md: '50%' }}
-                ml={{ base: 0, md: 2 }}
                 p={4}
               >
                 <Box borderWidth={'1px'} w="100%">
@@ -203,7 +207,7 @@ export default function Home() {
                   dolore eu fugiat nulla pariatur.
                 </Text>
               </Box>
-            </Flex>
+            </Stack>
           </VStack>
         </Center>
       </Container>
