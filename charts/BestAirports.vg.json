@@ -13,10 +13,7 @@
       "field": "airport",
       "type": "nominal",
       "title": "Airport",
-      "sort": {
-        "field": "on_time",
-        "order": "descending"
-      }
+      "sort": null
     },
     "x": {
       "field": "on_time",
