@@ -35,6 +35,10 @@ export default function Home() {
           </Heading>
 
           <VStack spacing={8} w="100%">
+            <Text fontStyle="italic">
+              All diagrams refer to data for year to date July 2022, unless
+              otherwise specified{' '}
+            </Text>
             <StatsHighlight average={'79.2%'} best={'88.2%'} />
             <Stack
               alignContent={'center'}
@@ -43,9 +47,12 @@ export default function Home() {
               w="100%"
             >
               <Box
+                _hover={{
+                  boxShadow: 'md',
+                  transition: 'box-shadow 0.1s linear',
+                }}
                 borderWidth={'1px'}
                 borderRadius={12}
-                w={{ base: '100%', md: '50%' }}
                 p={4}
               >
                 <Vis visId={'airportFlightsMap'} />
@@ -61,12 +68,7 @@ export default function Home() {
                   dolore eu fugiat nulla pariatur.
                 </Text>
               </Box>
-              <Box
-                borderWidth={'1px'}
-                borderRadius={12}
-                w={{ base: '100%', md: '50%' }}
-                p={4}
-              >
+              <Box borderWidth={'1px'} borderRadius={12} p={4}>
                 <Vis visId={'bestAirports'} />
                 <Heading size={'lg'} mt={2}>
                   Top 10 Airports by On-time Arrivals
@@ -92,7 +94,7 @@ export default function Home() {
             Airlines
           </Heading>
 
-          <VStack spacing={4} w="100%">
+          <VStack spacing={8} w="100%">
             <StatsHighlight average={'80.0%'} best={'85.0%'} />
             <Stack
               alignContent={'center'}
@@ -100,17 +102,8 @@ export default function Home() {
               spacing={4}
               w="100%"
             >
-              <Box
-                borderWidth={'1px'}
-                borderRadius={12}
-                w={{ base: '100%', md: '50%' }}
-                p={4}
-              >
-                <Box borderWidth={'1px'} w="100%">
-                  <Center minH="360px">
-                    <Text>Placeholder</Text>
-                  </Center>
-                </Box>
+              <Box borderWidth={'1px'} borderRadius={12} p={4}>
+                <Vis visId={'airlineOntimeRanking'} />
                 <Heading size={'lg'} mt={2}>
                   Chart Title
                 </Heading>
@@ -123,12 +116,7 @@ export default function Home() {
                   dolore eu fugiat nulla pariatur.
                 </Text>
               </Box>
-              <Box
-                borderWidth={'1px'}
-                borderRadius={12}
-                w={{ base: '100%', md: '50%' }}
-                p={4}
-              >
+              <Box borderWidth={'1px'} borderRadius={12} p={4}>
                 <Box borderWidth={'1px'} w="100%">
                   <Center minH="360px">
                     <Text>Placeholder</Text>
@@ -158,7 +146,7 @@ export default function Home() {
             Time Period
           </Heading>
 
-          <VStack spacing={4} w="100%">
+          <VStack spacing={8} w="100%">
             <Stack
               alignContent={'center'}
               direction={['column', 'row']}
@@ -190,13 +178,9 @@ export default function Home() {
                 w={{ base: '100%', md: '50%' }}
                 p={4}
               >
-                <Box borderWidth={'1px'} w="100%">
-                  <Center minH="360px">
-                    <Text>Placeholder</Text>
-                  </Center>
-                </Box>
+                <Vis visId={'carrierOntimeHeatmap'} />
                 <Heading size={'lg'} mt={8}>
-                  Chart Title
+                  Monthly On-time Arrivals (2005-2021)
                 </Heading>
                 <Text fontSize={'lg'} mt={2}>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed

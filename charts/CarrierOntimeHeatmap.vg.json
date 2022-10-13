@@ -1,0 +1,82 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "A heatmap showing monthly on-time flight arrivals from 2005 to 2021",
+  "width": "container",
+  "height": "container",
+  "padding": 5,
+  "title": {
+    "text": "",
+    "anchor": "middle",
+    "fontSize": 16,
+    "offset": 4
+  },
+  "data": {
+    "name": "monthly_ontime",
+    "url": "./data/monthly_ontime.csv"
+  },
+  "transform": [
+    {
+      "calculate": "datum.on_time * 100",
+      "as": "on_time_pct"
+    }
+  ],
+  "mark": "rect",
+  "encoding": {
+    "x": {
+      "field": "month",
+      "type": "ordinal",
+      "timeUnit": "month",
+      "axis": {
+        "title": "Month"
+      }
+    },
+    "y": {
+      "field": "year",
+      "type": "ordinal",
+      "timeUnit": "year",
+      "axis": {
+        "title": "Year"
+      }
+    },
+    "color": {
+      "field": "on_time_pct",
+      "type": "quantitative",
+      "scale": {
+        "scheme": "viridis"
+      },
+      "legend": {
+        "gradientLength": {
+          "expr": "containerSize()[1] - 32"
+        },
+        "title": "On-time flights (%)"
+      }
+    },
+    "tooltip": [
+      {
+        "field": "year",
+        "type": "ordinal",
+        "timeUnit": "year",
+        "title": "Year"
+      },
+      {
+        "field": "month",
+        "type": "ordinal",
+        "timeUnit": "month",
+        "title": "Month"
+      },
+      {
+        "field": "on_time",
+        "type": "quantitative",
+        "format": ".1%",
+        "title": "On-time flights (%)"
+      }
+    ]
+  },
+  "config": {
+    "axis": {
+      "ticks": false,
+      "labelPadding": 10,
+      "domain": false
+    }
+  }
+}

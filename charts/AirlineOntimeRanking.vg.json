@@ -1,0 +1,69 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": "container",
+  "height": "container",
+  "data": {
+    "url": "./data/top_airlines_yearly.csv"
+  },
+  "transform": [
+    {
+      "sort": [
+        {
+          "field": "on_time",
+          "order": "descending"
+        }
+      ],
+      "window": [
+        {
+          "op": "rank",
+          "as": "rank"
+        }
+      ],
+      "groupby": ["year"]
+    }
+  ],
+  "params": [
+    {
+      "name": "carrier",
+      "select": {
+        "type": "point",
+        "fields": ["carrier_name"]
+      },
+      "bind": "legend"
+    }
+  ],
+  "mark": {
+    "type": "line",
+    "orient": "vertical",
+    "point": true
+  },
+  "encoding": {
+    "x": {
+      "field": "year",
+      "timeUnit": "year",
+      "title": "Year"
+    },
+    "y": {
+      "field": "rank",
+      "type": "ordinal",
+      "title": "Rank"
+    },
+    "color": {
+      "field": "carrier_name",
+      "type": "nominal",
+      "scale": {
+        "scheme": "category10"
+      },
+      "legend": {
+        "title": "Airline"
+      }
+    },
+    "opacity": {
+      "condition": {
+        "param": "carrier",
+        "value": 1
+      },
+      "value": 0.2
+    }
+  }
+}
