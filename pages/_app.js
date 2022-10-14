@@ -11,7 +11,7 @@ function MyApp({ Component, pageProps }) {
         <title>US Airport and Airline Performance</title>
         <meta
           name="description"
-          content="Analysis of US airport and airline performance from 2016-2020"
+          content="Analysis of US flight delays from 2005-2022"
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>

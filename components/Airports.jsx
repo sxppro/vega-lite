@@ -19,7 +19,12 @@ const Airports = () => {
           All diagrams refer to data for year to date July 2022, unless
           otherwise specified{' '}
         </Text>
-        <StatsHighlight average={'79.2%'} best={'88.2%'} />
+        <StatsHighlight
+          average={'77.9%'}
+          best={'85.4%'}
+          change={{ avgChange: 'decrease', bestChange: 'decrease' }}
+          helpText={{ avgText: '-4.1%', bestText: '-3.4%' }}
+        />
         <Stack
           alignContent={'center'}
           direction={['column', 'row']}
@@ -37,7 +42,7 @@ const Airports = () => {
           >
             <Vis visId={'airportFlightsMap'} />
             <Heading size={'lg'} pt={2}>
-              Airports by Number of Arriving Flights
+              Number of flights at largest airports
             </Heading>
             <Text fontSize={'lg'} pt={2}>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -51,7 +56,7 @@ const Airports = () => {
           <Box borderWidth={'1px'} borderRadius={12} p={4}>
             <Vis visId={'bestAirports'} />
             <Heading size={'lg'} mt={2}>
-              Top 10 Airports by On-time Arrivals
+              Airports with the most on-time flights
             </Heading>
             <Text fontSize={'lg'} mt={2}>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do

@@ -15,7 +15,16 @@ const Airlines = () => {
       </Heading>
 
       <VStack spacing={8} w="100%">
-        <StatsHighlight average={'80.0%'} best={'85.0%'} />
+        <Text fontStyle="italic">
+          All diagrams refer to data for year to date July 2022, unless
+          otherwise specified{' '}
+        </Text>
+        <StatsHighlight
+          average={'78.4%'}
+          best={'84.2%'}
+          change={{ avgChange: 'decrease', bestChange: 'increase' }}
+          helpText={{ avgText: '-13.1%', bestText: '1.2%' }}
+        />
         <Stack
           alignContent={'center'}
           direction={['column', 'row']}
@@ -25,7 +34,7 @@ const Airlines = () => {
           <Box borderWidth={'1px'} borderRadius={12} p={4}>
             <Vis visId={'airlineOntimeRanking'} />
             <Heading size={'lg'} mt={2}>
-              Top 3 Airlines by On-time Performance (2012-2022)
+              What are the most on-time airlines? (2012-2022)
             </Heading>
             <Text fontSize={'lg'} mt={2}>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do

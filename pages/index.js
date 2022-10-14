@@ -1,23 +1,7 @@
-import {
-  Container,
-  Center,
-  Heading,
-  Divider,
-  Stack,
-  VStack,
-  Box,
-  Text,
-  Tab,
-  Tabs,
-  TabList,
-  TabPanel,
-  TabPanels,
-} from '@chakra-ui/react';
+import { Container, Center, Heading, Divider } from '@chakra-ui/react';
 import Airlines from '../components/Airlines';
 import Airports from '../components/Airports';
-import StatsHighlight from '../components/StatsHighlight';
 import TimePeriod from '../components/TimePeriod';
-import Vis from '../components/Vis';
 
 export default function Home() {
   return (

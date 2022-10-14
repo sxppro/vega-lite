@@ -44,7 +44,7 @@ const TimePeriod = () => {
                   <Heading size={'lg'} mt={2} textAlign="left">
                     Yearly Flight Delay Causes
                   </Heading>
-                  <Text fontSize={'lg'} mt={2}>
+                  <Text fontSize={'lg'} mt={2} textAlign="left">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                     do eiusmod tempor incididunt ut labore et dolore magna
                     aliqua. Ut enim ad minim veniam, quis nostrud exercitation
@@ -78,10 +78,10 @@ const TimePeriod = () => {
                 </Box>
                 <Box borderWidth={'1px'} borderRadius={12} p={4}>
                   <Vis visId={'carrierOntimeHeatmap'} />
-                  <Heading size={'lg'} mt={8}>
+                  <Heading size={'lg'} mt={8} textAlign="left">
                     Monthly On-time Arrivals (2005-2021)
                   </Heading>
-                  <Text fontSize={'lg'} mt={2}>
+                  <Text fontSize={'lg'} mt={2} textAlign="left">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                     do eiusmod tempor incididunt ut labore et dolore magna
                     aliqua. Ut enim ad minim veniam, quis nostrud exercitation
