@@ -153,12 +153,7 @@ export default function Home() {
               spacing={4}
               w="100%"
             >
-              <Box
-                borderWidth={'1px'}
-                borderRadius={12}
-                w={{ base: '100%', md: '50%' }}
-                p={4}
-              >
+              <Box borderWidth={'1px'} borderRadius={12} p={4}>
                 <Vis visId={'yearlyDelayCause'} />
                 <Heading size={'lg'} mt={2}>
                   Yearly Flight Delay Causes
@@ -172,12 +167,14 @@ export default function Home() {
                   dolore eu fugiat nulla pariatur.
                 </Text>
               </Box>
-              <Box
-                borderWidth={'1px'}
-                borderRadius={12}
-                w={{ base: '100%', md: '50%' }}
-                p={4}
-              >
+            </Stack>
+            <Stack
+              alignContent={'center'}
+              direction={['column', 'row']}
+              spacing={4}
+              w="100%"
+            >
+              <Box borderWidth={'1px'} borderRadius={12} p={4}>
                 <Vis visId={'carrierOntimeHeatmap'} />
                 <Heading size={'lg'} mt={8}>
                   Monthly On-time Arrivals (2005-2021)

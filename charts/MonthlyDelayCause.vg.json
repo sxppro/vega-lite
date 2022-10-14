@@ -13,18 +13,18 @@
           "width": 450,
           "height": 360,
           "data": {
-            "url": "./data/delay_cause_yearly.csv"
+            "url": "./data/delay_cause_monthly.csv"
           },
           "transform": [
             {
               "as": "date",
-              "calculate": "datetime(datum.year)"
+              "calculate": "datetime(datum.year, datum.month - 1)"
             }
           ],
           "encoding": {
             "x": {
               "field": "date",
-              "timeUnit": "year",
+              "timeUnit": "yearmonth",
               "scale": {
                 "domain": {
                   "param": "time_brush"
@@ -203,19 +203,19 @@
           "width": 450,
           "height": 360,
           "data": {
-            "url": "./data/delay_cause_yearly_mins.csv"
+            "url": "./data/delay_cause_monthly_mins.csv"
           },
           "transform": [
             {
               "as": "date",
-              "calculate": "datetime(datum.year)"
+              "calculate": "datetime(datum.year, datum.month - 1)"
             }
           ],
           "mark": "line",
           "encoding": {
             "x": {
               "field": "date",
-              "timeUnit": "year",
+              "timeUnit": "yearmonth",
               "scale": {
                 "domain": {
                   "param": "time_brush"
@@ -261,12 +261,12 @@
       "width": 1000,
       "height": 60,
       "data": {
-        "url": "./data/yearly_ontime.csv"
+        "url": "./data/monthly_ontime.csv"
       },
       "transform": [
         {
           "as": "date",
-          "calculate": "datetime(datum.year)"
+          "calculate": "datetime(datum.year, datum.month - 1)"
         }
       ],
       "mark": "line",
@@ -282,7 +282,7 @@
       "encoding": {
         "x": {
           "field": "date",
-          "timeUnit": "year",
+          "timeUnit": "yearmonth",
           "axis": {
             "title": "",
             "format": "%Y"
