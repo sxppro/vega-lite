@@ -46,13 +46,9 @@ const Airlines = () => {
             </Text>
           </Box>
           <Box borderWidth={'1px'} borderRadius={12} p={4}>
-            <Box borderWidth={'1px'} w="100%">
-              <Center minH="360px">
-                <Text>Placeholder</Text>
-              </Center>
-            </Box>
+            <Vis visId={'airlineOntimeScatter'} />
             <Heading size={'lg'} mt={2}>
-              Chart Title
+              Number of flights and on-time performance
             </Heading>
             <Text fontSize={'lg'} mt={2}>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do

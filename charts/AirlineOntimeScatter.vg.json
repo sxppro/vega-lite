@@ -1,0 +1,21 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "url": "./data/airline_ontime_2022.csv"
+  },
+  "width": "container",
+  "height": "container",
+  "mark": "point",
+  "encoding": {
+    "x": {
+      "field": "flights",
+      "type": "quantitative",
+      "title": "Annual flights"
+    },
+    "y": {
+      "field": "on_time",
+      "type": "quantitative",
+      "title": "On-time flights (%)"
+    }
+  }
+}
