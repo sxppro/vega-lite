@@ -10,8 +10,8 @@
     {
       "hconcat": [
         {
-          "width": 450,
-          "height": 360,
+          "width": 425,
+          "height": 320,
           "data": {
             "url": "./data/delay_cause_yearly.csv"
           },
@@ -200,8 +200,8 @@
           ]
         },
         {
-          "width": 450,
-          "height": 360,
+          "width": 425,
+          "height": 320,
           "data": {
             "url": "./data/delay_cause_yearly_mins.csv"
           },
@@ -258,7 +258,7 @@
       ]
     },
     {
-      "width": 1000,
+      "width": 980,
       "height": 60,
       "data": {
         "url": "./data/yearly_ontime.csv"

@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { visualise } from '../utils/charts';
 import { Box, Center, Spinner } from '@chakra-ui/react';
 
-const Vis = ({ visId }) => {
+const Vis = ({ visId, height = '360px' }) => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -18,7 +18,7 @@ const Vis = ({ visId }) => {
   }, [visId]);
 
   return (
-    <Box id={visId} w="100%" h={{ base: '256px', md: '360px' }}>
+    <Box id={visId} w="100%" h={{ base: '256px', md: height }}>
       {loading ? (
         <Center h={'inherit'}>
           <Spinner size={'xl'} />
