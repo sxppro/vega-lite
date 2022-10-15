@@ -31,7 +31,12 @@ const Airlines = () => {
           spacing={4}
           w="100%"
         >
-          <Box borderWidth={'1px'} borderRadius={12} p={4}>
+          <Box
+            borderWidth={'1px'}
+            borderRadius={12}
+            p={4}
+            w={{ base: '100%', md: '50%' }}
+          >
             <Vis visId={'airlineOntimeRanking'} />
             <Heading size={'lg'} mt={2}>
               What are the most on-time airlines? (2012-2022)
@@ -45,7 +50,12 @@ const Airlines = () => {
               nulla pariatur.
             </Text>
           </Box>
-          <Box borderWidth={'1px'} borderRadius={12} p={4}>
+          <Box
+            borderWidth={'1px'}
+            borderRadius={12}
+            p={4}
+            w={{ base: '100%', md: '50%' }}
+          >
             <Vis visId={'airlineOntimeScatter'} />
             <Heading size={'lg'} mt={2}>
               Number of flights and on-time performance

@@ -27,6 +27,7 @@ const Airports = () => {
         />
         <Stack
           alignContent={'center'}
+          justifyContent={'space-between'}
           direction={['column', 'row']}
           spacing={4}
           w="100%"
@@ -39,32 +40,31 @@ const Airports = () => {
             borderWidth={'1px'}
             borderRadius={12}
             p={4}
+            w={{ base: '100%', md: '50%' }}
           >
             <Vis visId={'airportFlightsMap'} />
             <Heading size={'lg'} pt={2}>
               Number of flights at largest airports
             </Heading>
             <Text fontSize={'lg'} pt={2}>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat
-              nulla pariatur.
+              While most people know of LAX (Los Angeles International) and JFK
+              (John F. Kennedy), the airports handling the most flights are
+              actually perhaps lesser known by people around the world.
             </Text>
           </Box>
-          <Box borderWidth={'1px'} borderRadius={12} p={4}>
+          <Box
+            borderWidth={'1px'}
+            borderRadius={12}
+            p={4}
+            w={{ base: '100%', md: '50%' }}
+          >
             <Vis visId={'bestAirports'} />
             <Heading size={'lg'} mt={2}>
               Airports with the most on-time flights
             </Heading>
             <Text fontSize={'lg'} mt={2}>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat
-              nulla pariatur.
+              eiusmod tempor incididunt ut labore et dolore magna aliqua.
             </Text>
           </Box>
         </Stack>
