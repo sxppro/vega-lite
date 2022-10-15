@@ -40,7 +40,7 @@ const TimePeriod = () => {
                 w="100%"
               >
                 <Box borderWidth={'1px'} borderRadius={12} p={4}>
-                  <Vis visId={'yearlyDelayCause'} height={'458px'} />
+                  <Vis visId={'yearlyDelayCause'} height={'486px'} />
                   <Heading size={'lg'} mt={2} textAlign="left">
                     Yearly Flight Delay Causes
                   </Heading>
@@ -63,7 +63,7 @@ const TimePeriod = () => {
                 w="100%"
               >
                 <Box borderWidth={'1px'} borderRadius={12} p={4}>
-                  <Vis visId={'monthlyDelayCause'} height={'458px'} />
+                  <Vis visId={'monthlyDelayCause'} height={'486px'} />
                   <Heading size={'lg'} mt={2} textAlign="left">
                     Monthly Flight Delay Causes
                   </Heading>

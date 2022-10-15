@@ -5,17 +5,88 @@
   },
   "width": "container",
   "height": "container",
-  "mark": "point",
+  "transform": [
+    {
+      "as": "on_time_pct",
+      "calculate": "datum.on_time * 100"
+    }
+  ],
   "encoding": {
     "x": {
       "field": "flights",
       "type": "quantitative",
-      "title": "Annual flights"
+      "title": "Annual flights",
+      "axis": {
+        "grid": false
+      }
     },
     "y": {
-      "field": "on_time",
+      "field": "on_time_pct",
       "type": "quantitative",
       "title": "On-time flights (%)"
+    },
+    "tooltip": [
+      {
+        "field": "carrier_name",
+        "type": "ordinal",
+        "title": "Airline"
+      },
+      {
+        "field": "on_time",
+        "type": "quantitative",
+        "title": "On-time",
+        "format": ".2%"
+      }
+    ]
+  },
+  "layer": [
+    {
+      "mark": {
+        "type": "point",
+        "filled": true,
+        "size": 128
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "right",
+        "fontSize": 11.5,
+        "dy": 12
+      },
+      "encoding": {
+        "text": { "field": "carrier_name", "type": "nominal" },
+        "color": { "value": "black" },
+        "opacity": {
+          "condition": {
+            "test": "datum.carrier_name === 'Southwest Airlines Co.'",
+            "value": 1
+          },
+          "value": 0
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "fontSize": 11.5,
+        "dy": 12
+      },
+      "encoding": {
+        "text": { "field": "carrier_name", "type": "nominal" },
+        "color": { "value": "black" },
+        "opacity": {
+          "condition": {
+            "test": "datum.carrier_name === 'Allegiant Air'",
+            "value": 1
+          },
+          "value": 0
+        }
+      }
     }
+  ],
+  "config": {
+    "font": "-apple-system, BlinkMacSystemFont, Inter, 'Segoe UI', Helvetica, Arial, sans-serif"
   }
 }

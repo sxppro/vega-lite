@@ -10,6 +10,12 @@
     {
       "hconcat": [
         {
+          "title": {
+            "text": "Proportion of flights delayed (2005-2021)",
+            "orient": "top",
+            "anchor": "start",
+            "fontSize": 24
+          },
           "width": 425,
           "height": 320,
           "data": {
@@ -63,7 +69,10 @@
                       }
                     }
                   ],
-                  "mark": "point"
+                  "mark": {
+                    "type": "point",
+                    "filled": true
+                  }
                 }
               ],
               "encoding": {
@@ -86,7 +95,13 @@
                   "field": "type",
                   "type": "nominal",
                   "scale": {
-                    "range": "category"
+                    "range": [
+                      "#a0e85b",
+                      "#7f20ac",
+                      "#2fddce",
+                      "#3a427d",
+                      "#75b3d8"
+                    ]
                   },
                   "legend": {
                     "title": "Delay Cause",
@@ -123,11 +138,6 @@
                 "tooltip": [
                   {
                     "field": "date",
-                    "timeUnit": "month",
-                    "title": "Month"
-                  },
-                  {
-                    "field": "date",
                     "timeUnit": "year",
                     "title": "Year"
                   },
@@ -158,7 +168,7 @@
                   {
                     "field": "delay_weather",
                     "type": "quantitative",
-                    "title": "Extreme weather (%)",
+                    "title": "Weather (%)",
                     "format": ".2"
                   }
                 ]
@@ -200,6 +210,12 @@
           ]
         },
         {
+          "title": {
+            "text": "Flight delay minutes (2005-2021)",
+            "orient": "top",
+            "anchor": "start",
+            "fontSize": 24
+          },
           "width": 425,
           "height": 320,
           "data": {
@@ -211,7 +227,6 @@
               "calculate": "datetime(datum.year)"
             }
           ],
-          "mark": "line",
           "encoding": {
             "x": {
               "field": "date",
@@ -227,33 +242,160 @@
                 "grid": false,
                 "format": "%Y"
               }
-            },
-            "y": {
-              "field": "value",
-              "type": "quantitative",
-              "axis": {
-                "title": "Minutes"
-              }
-            },
-            "color": {
-              "field": "type",
-              "type": "nominal",
-              "scale": {
-                "range": "category"
-              },
-              "legend": {
-                "title": "Delay Cause",
-                "labelExpr": "datum.label === 'delay_carrier' ? 'Carrier' : datum.label === 'delay_late' ? 'Previous late aircraft' : datum.label === 'delay_nas' ? 'National Aviation System' : datum.label === 'delay_security' ? 'Security' : 'Weather'"
-              }
-            },
-            "opacity": {
-              "condition": {
-                "param": "delay_cause",
-                "value": 1
-              },
-              "value": 0.2
             }
-          }
+          },
+          "layer": [
+            {
+              "layer": [
+                {
+                  "mark": "line",
+                  "params": [
+                    {
+                      "name": "delay_cause",
+                      "select": {
+                        "type": "point",
+                        "fields": ["type"]
+                      },
+                      "bind": "legend"
+                    }
+                  ]
+                },
+                {
+                  "transform": [
+                    {
+                      "filter": {
+                        "param": "hover",
+                        "empty": false
+                      }
+                    }
+                  ],
+                  "mark": {
+                    "type": "point",
+                    "filled": true
+                  }
+                }
+              ],
+              "encoding": {
+                "y": {
+                  "field": "value",
+                  "type": "quantitative",
+                  "axis": {
+                    "title": "Minutes"
+                  }
+                },
+                "color": {
+                  "field": "type",
+                  "type": "nominal",
+                  "scale": {
+                    "range": [
+                      "#a0e85b",
+                      "#7f20ac",
+                      "#2fddce",
+                      "#3a427d",
+                      "#75b3d8"
+                    ]
+                  }
+                },
+                "opacity": {
+                  "condition": {
+                    "param": "delay_cause",
+                    "value": 1
+                  },
+                  "value": 0.2
+                }
+              }
+            },
+            {
+              "transform": [
+                {
+                  "pivot": "type",
+                  "value": "value",
+                  "groupby": ["date"]
+                }
+              ],
+              "mark": "rule",
+              "encoding": {
+                "opacity": {
+                  "condition": {
+                    "value": 0.3,
+                    "param": "hover",
+                    "empty": false
+                  },
+                  "value": 0
+                },
+                "tooltip": [
+                  {
+                    "field": "date",
+                    "timeUnit": "year",
+                    "title": "Year"
+                  },
+                  {
+                    "field": "delay_carrier",
+                    "type": "quantitative",
+                    "title": "Carrier",
+                    "format": ",.3s"
+                  },
+                  {
+                    "field": "delay_late",
+                    "type": "quantitative",
+                    "title": "Previous late aircraft",
+                    "format": ",.3s"
+                  },
+                  {
+                    "field": "delay_security",
+                    "type": "quantitative",
+                    "title": "Security",
+                    "format": ",.3s"
+                  },
+                  {
+                    "field": "delay_nas",
+                    "type": "quantitative",
+                    "title": "National Aviation System",
+                    "format": ",.3s"
+                  },
+                  {
+                    "field": "delay_weather",
+                    "type": "quantitative",
+                    "title": "Weather",
+                    "format": ",.3s"
+                  }
+                ]
+              },
+              "params": [
+                {
+                  "name": "hover",
+                  "select": {
+                    "type": "point",
+                    "fields": ["date"],
+                    "nearest": true,
+                    "on": "mouseover",
+                    "clear": "mouseout"
+                  }
+                }
+              ]
+            },
+            {
+              "encoding": {
+                "x": { "datum": { "year": 2020, "month": 2 } }
+              },
+              "layer": [
+                {
+                  "mark": "rule"
+                },
+                {
+                  "mark": {
+                    "type": "text",
+                    "align": "right",
+                    "baseline": "bottom",
+                    "dx": -2,
+                    "dy": -134,
+                    "x": "width",
+                    "text": "Pandemic"
+                  }
+                }
+              ]
+            }
+          ]
         }
       ]
     },
@@ -301,6 +443,6 @@
     }
   ],
   "config": {
-    "font": "-apple-system, BlinkMacSystemFont, Inter"
+    "font": "-apple-system, BlinkMacSystemFont, Inter, 'Segoe UI', Helvetica, Arial, sans-serif"
   }
 }

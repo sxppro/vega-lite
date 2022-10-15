@@ -76,5 +76,8 @@
       },
       { "field": "rank", "type": "ordinal", "title": "Rank" }
     ]
+  },
+  "config": {
+    "font": "-apple-system, BlinkMacSystemFont, Inter, 'Segoe UI', Helvetica, Arial, sans-serif"
   }
 }
