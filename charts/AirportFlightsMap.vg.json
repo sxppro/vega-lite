@@ -27,11 +27,33 @@
     },
     {
       "data": {
-        "url": "data/top_airports_flights.csv"
+        "url": "data/top_airports_flights.csv",
+        "format": {
+          "type": "csv",
+          "parse": {
+            "arr_flights": "number"
+          }
+        }
       },
       "projection": {
         "type": "albersUsa"
       },
+      "transform": [
+        {
+          "window": [
+            {
+              "op": "rank",
+              "as": "rank"
+            }
+          ],
+          "sort": [
+            {
+              "field": "arr_flights",
+              "order": "descending"
+            }
+          ]
+        }
+      ],
       "encoding": {
         "longitude": {
           "field": "longitude",
@@ -91,6 +113,20 @@
             "text": {
               "field": "airport",
               "type": "nominal"
+            }
+          }
+        },
+        {
+          "mark": {
+            "type": "text",
+            "fontSize": 16,
+            "fontWeight": "bold",
+            "align": "center"
+          },
+          "encoding": {
+            "text": {
+              "field": "rank",
+              "type": "ordinal"
             }
           }
         }

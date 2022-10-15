@@ -36,6 +36,12 @@
         "type": "quantitative",
         "title": "On-time",
         "format": ".2%"
+      },
+      {
+        "field": "flights",
+        "type": "quantitative",
+        "title": "Flights",
+        "format": ","
       }
     ]
   },
@@ -50,7 +56,7 @@
     {
       "mark": {
         "type": "text",
-        "align": "right",
+        "align": "center",
         "fontSize": 11.5,
         "dy": 12
       },
@@ -59,26 +65,7 @@
         "color": { "value": "black" },
         "opacity": {
           "condition": {
-            "test": "datum.carrier_name === 'Southwest Airlines Co.'",
-            "value": 1
-          },
-          "value": 0
-        }
-      }
-    },
-    {
-      "mark": {
-        "type": "text",
-        "align": "left",
-        "fontSize": 11.5,
-        "dy": 12
-      },
-      "encoding": {
-        "text": { "field": "carrier_name", "type": "nominal" },
-        "color": { "value": "black" },
-        "opacity": {
-          "condition": {
-            "test": "datum.carrier_name === 'Allegiant Air'",
+            "test": "datum.carrier_name === 'Southwest Airlines Co.' || datum.carrier_name === 'Allegiant Air'",
             "value": 1
           },
           "value": 0

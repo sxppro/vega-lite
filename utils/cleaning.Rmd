@@ -143,7 +143,7 @@ yearly_ontime <- delay_data %>%
 ```
 
 ```{r}
-# Yearly carrier on-time rankings
+# Yearly top carrier on-time rankings
 top_airlines_yearly <- delay_data %>% 
   group_by(year, carrier_name) %>% 
   summarise(on_time = (1 - (sum(arr_del15)/sum(arr_flights))),
@@ -160,11 +160,29 @@ top_airlines_yearly <- top_airlines_yearly %>%
 
 ```{r}
 # Top airlines by airport
-delay_data %>% 
+top_delay_causes <- delay_data %>% 
   filter(year == 2022) %>% 
-  group_by(year, carrier_name, airport_name) %>% 
-  summarise(flights = sum(arr_flights)) %>% 
-  arrange(year, desc(flights))
+  group_by(year, carrier_name) %>% 
+  summarise(delay_carrier = sum(carrier_ct),
+            delay_late = sum(late_aircraft_ct),
+            delay_security = sum(security_ct),
+            delay_nas = sum(nas_ct),
+            delay_weather = sum(weather_ct)) %>% 
+  ungroup() %>% 
+  pivot_longer(-c(year, carrier_name), names_to = "type", values_to = "value") %>% 
+  group_by(carrier_name) %>% 
+  slice_max(order_by = value) %>% 
+  ungroup() %>% 
+  group_by(type) %>% 
+  summarise(airlines = n())
+
+airline_ontime_2022 <- delay_data %>% 
+  filter(year == 2022) %>% 
+  group_by(year, carrier_name) %>% 
+  summarise(on_time = (1 - (sum(arr_del15)/sum(arr_flights))),
+            flights = sum(arr_flights)) %>% 
+  filter(flights > 10000) %>% 
+  arrange(desc(on_time))
 ```
 
 
@@ -181,5 +199,6 @@ write_csv(top_airports_flights, '../charts/data/top_airports_flights.csv')
 write_csv(monthly_ontime, '../charts/data/monthly_ontime.csv')
 write_csv(yearly_ontime, '../charts/data/yearly_ontime.csv')
 write_csv(top_airlines_yearly, '../charts/data/top_airlines_yearly.csv')
+write_csv(airline_ontime_2022, '../charts/data/airline_ontime_2022.csv')
 ```
 

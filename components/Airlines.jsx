@@ -37,17 +37,16 @@ const Airlines = () => {
             p={4}
             w={{ base: '100%', md: '50%' }}
           >
-            <Vis visId={'airlineOntimeRanking'} />
+            <Vis visId={'airlineOntimeScatter'} />
             <Heading size={'lg'} mt={2}>
-              What are the most on-time airlines? (2012-2022)
+              Number of flights and on-time performance
             </Heading>
             <Text fontSize={'lg'} mt={2}>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat
-              nulla pariatur.
+              One may think that the more flights an airline operates, the more
+              difficult it is to achieve better on-time performance. However,{' '}
+              <b>Allegiant Air</b> operates a little over a tenth of the number
+              flights of <b>Southwest</b>, yet has significantly worse on-time
+              performance.
             </Text>
           </Box>
           <Box
@@ -56,17 +55,19 @@ const Airlines = () => {
             p={4}
             w={{ base: '100%', md: '50%' }}
           >
-            <Vis visId={'airlineOntimeScatter'} />
+            <Vis visId={'airlineOntimeRanking'} />
             <Heading size={'lg'} mt={2}>
-              Number of flights and on-time performance
+              What are the most on-time airlines?
             </Heading>
             <Text fontSize={'lg'} mt={2}>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat
-              nulla pariatur.
+              <b>Hawaiian Airlines</b> has previously been the most on-time US
+              airline, however, since 2021 <b>Endeavor Air</b> has taken over
+              that title.
+            </Text>
+            <Text fontSize={'lg'} mt={2}>
+              Taking into account we only have data for the year until July
+              2022, 2 new entrants have taken 2nd and 3rd place for 2022—
+              <b>Horizon Air</b> and <b>Envoy Air</b>—both regional airlines.
             </Text>
           </Box>
         </Stack>

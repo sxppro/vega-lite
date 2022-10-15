@@ -44,12 +44,19 @@ const Airports = () => {
           >
             <Vis visId={'airportFlightsMap'} />
             <Heading size={'lg'} pt={2}>
-              Number of flights at largest airports
+              Airports ranked by number of flights
             </Heading>
             <Text fontSize={'lg'} pt={2}>
-              While most people know of LAX (Los Angeles International) and JFK
-              (John F. Kennedy), the airports handling the most flights are
-              actually perhaps lesser known by people around the world.
+              While most people know of <b>LAX</b> (Los Angeles International)
+              and <b>JFK</b> (John F. Kennedy), the airports handling the most
+              flights are actually perhaps lesser known by people around the
+              world.
+            </Text>
+            <Text fontSize={'lg'} pt={2}>
+              The busiest airport by number of flights—
+              <b>ATL</b> (Hartsfield-Jackson Atlanta International)—is Delta
+              Airlines&apos; primary hub with over 1,000 flights per day to over
+              225 destinations.
             </Text>
           </Box>
           <Box
@@ -63,8 +70,15 @@ const Airports = () => {
               Airports with the most on-time flights
             </Heading>
             <Text fontSize={'lg'} mt={2}>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              Salt Lake City International (<b>SLC</b>) handles the most on-time
+              flights with over <b>88%</b> of flights arriving within 15 minutes
+              of their scheduled arrival. <b>SLC</b> has historically
+              consistently ranked high for on-time performance.
+            </Text>
+            <Text fontSize={'lg'} mt={2}>
+              Airports with greater traffic are not absent from this chart. The
+              aforementioned busiest airport, <b>ATL</b>, is ranked 3rd for
+              timely flights.
             </Text>
           </Box>
         </Stack>
