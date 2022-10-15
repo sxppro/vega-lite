@@ -64,15 +64,15 @@
         {
           "mark": {
             "type": "circle",
-            "fill": "black",
-            "tooltip": true
+            "tooltip": true,
+            "fill": "#A273FF"
           },
           "encoding": {
             "size": {
               "field": "arr_flights",
               "type": "quantitative",
               "scale": {
-                "type": "linear"
+                "range": [0, 2048]
               },
               "legend": {
                 "title": "Flights"
@@ -85,7 +85,7 @@
             "type": "text",
             "fontSize": 16,
             "align": "center",
-            "dy": -16
+            "dy": -26
           },
           "encoding": {
             "text": {

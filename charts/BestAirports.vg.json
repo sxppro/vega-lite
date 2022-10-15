@@ -23,7 +23,10 @@
   },
   "layer": [
     {
-      "mark": "bar",
+      "mark": {
+        "type": "bar",
+        "color": "#B200D5"
+      },
       "encoding": {
         "tooltip": [
           {
