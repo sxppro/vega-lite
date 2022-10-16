@@ -92,12 +92,11 @@ const TimePeriod = () => {
                     Monthly flight delays
                   </Heading>
                   <Text fontSize={'lg'} mt={2} textAlign="left">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    Duis aute irure dolor in reprehenderit in voluptate velit
-                    esse cillum dolore eu fugiat nulla pariatur.
+                    There appear to be some cyclical patterns going on, which we
+                    can confirm using the heatmap below. Generally, delays are
+                    highly correlated with each other, so increases in delays or
+                    delay minutes due to one specific delay cause will generally
+                    mean increases for other delay causes.
                   </Text>
                 </Box>
                 <Box borderWidth={'1px'} borderRadius={12} p={4}>
@@ -110,12 +109,16 @@ const TimePeriod = () => {
                     Monthly proportion of on-time flights
                   </Heading>
                   <Text fontSize={'lg'} mt={2} textAlign="left">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    Duis aute irure dolor in reprehenderit in voluptate velit
-                    esse cillum dolore eu fugiat nulla pariatur.
+                    It is clear that on-time performance suffers during{' '}
+                    <b>June to August</b> which lines up with the summer
+                    vacation period in the US. Around <b>December</b> flights
+                    are also generally less on-time due to the Christmas travel
+                    period.
+                  </Text>
+                  <Text fontSize={'lg'} mt={2} textAlign="left">
+                    In 2020, on-time performance improved significantly, likely
+                    due to reduced number of flights running as well as reduced
+                    air traffic.
                   </Text>
                 </Box>
               </Stack>
