@@ -37,7 +37,7 @@
           {
             "field": "on_time",
             "type": "quantitative",
-            "title": "On time (%)",
+            "title": "On-time (%)",
             "format": ".4"
           }
         ]

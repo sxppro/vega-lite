@@ -3,7 +3,7 @@
   "width": "container",
   "height": "container",
   "data": {
-    "url": "./data/top_airlines_yearly.csv"
+    "url": "./data/top_airports_yearly.csv"
   },
   "transform": [
     {
@@ -24,10 +24,10 @@
   ],
   "params": [
     {
-      "name": "carrier",
+      "name": "airport",
       "select": {
         "type": "point",
-        "fields": ["carrier_name"]
+        "fields": ["airport_name"]
       },
       "bind": "legend"
     }
@@ -52,18 +52,22 @@
       "title": "Rank"
     },
     "color": {
-      "field": "carrier_name",
+      "field": "airport_name",
       "type": "nominal",
       "scale": {
         "range": [
-          "#a6cee3",
-          "#1f78b4",
-          "#b2df8a",
-          "#33a02c",
-          "#fb9a99",
-          "#e31a1c",
-          "#fdbf6f",
-          "#ff7f00"
+          "#8dd3c7",
+          "#ffffb3",
+          "#bebada",
+          "#fb8072",
+          "#80b1d3",
+          "#fdb462",
+          "#b3de69",
+          "#fccde5",
+          "#d9d9d9",
+          "#bc80bd",
+          "#ccebc5",
+          "#ffed6f"
         ]
       },
       "legend": {
@@ -72,7 +76,7 @@
     },
     "opacity": {
       "condition": {
-        "param": "carrier",
+        "param": "airport",
         "value": 1
       },
       "value": 0.2
@@ -80,9 +84,9 @@
     "tooltip": [
       { "field": "rank", "type": "ordinal", "title": "Rank" },
       {
-        "field": "carrier_name",
+        "field": "airport_name",
         "type": "nominal",
-        "title": "Airline"
+        "title": "Airport"
       }
     ]
   },

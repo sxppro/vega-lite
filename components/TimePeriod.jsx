@@ -48,7 +48,7 @@ const TimePeriod = () => {
                 >
                   <Vis visId={'yearlyDelayCause'} height={'486px'} />
                   <Heading size={'lg'} mt={2} textAlign="left">
-                    Yearly Flight Delay Causes
+                    Yearly Flight Delays
                   </Heading>
                   <Text fontSize={'lg'} mt={2} textAlign="left">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
@@ -77,7 +77,7 @@ const TimePeriod = () => {
                 >
                   <Vis visId={'monthlyDelayCause'} height={'486px'} />
                   <Heading size={'lg'} mt={2} textAlign="left">
-                    Monthly Flight Delay Causes
+                    Monthly Flight Delays
                   </Heading>
                   <Text fontSize={'lg'} mt={2} textAlign="left">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed

@@ -50,7 +50,8 @@
       "mark": {
         "type": "point",
         "filled": true,
-        "size": 128
+        "size": 128,
+        "color": "#FC0082"
       }
     },
     {

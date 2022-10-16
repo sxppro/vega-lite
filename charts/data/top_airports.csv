@@ -1,11 +1,11 @@
 airport,on_time,arr_flights,airport_name
-SLC,88.2288143782008,51745,Salt Lake City International
-SFO,84.60506649292914,52186,San Francisco International
-ATL,84.43309602274157,159004,Hartsfield-Jackson Atlanta International
-IAH,84.38224250372792,55661,George Bush Intercontinental/Houston
-DTW,84.31769830817547,59226,Detroit Metro Wayne County
-OGG,84.13614075569656,6934,Kahului Airport
-MSP,84.0003761519654,53170,Minneapolis-St Paul International
-SEA,83.84143120429174,85187,Seattle/Tacoma International
-PDX,82.86009778112073,10636,Portland International
-ORD,82.59910549373389,131022,Chicago O'Hare International
+SLC,85.41319676851953,64243,Salt Lake City International
+ATL,83.14595118445482,183671,Hartsfield-Jackson Atlanta International
+SFO,82.97764431097765,74925,San Francisco International
+IAH,82.8680479825518,73360,George Bush Intercontinental/Houston
+SEA,82.71865867100831,98887,Seattle/Tacoma International
+HNL,82.57695969533482,31510,Daniel K Inouye International
+OGG,82.4830621344606,17269,Kahului Airport
+DTW,82.4717457784869,75210,Detroit Metro Wayne County
+MSP,82.40147434079954,70540,Minneapolis-St Paul International
+BOI,81.91352594898167,14779,Boise Air Terminal

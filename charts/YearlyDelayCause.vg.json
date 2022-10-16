@@ -11,7 +11,7 @@
       "hconcat": [
         {
           "title": {
-            "text": "Proportion of flights delayed (2005-2021)",
+            "text": "Flight delay proportion (2005-2021)",
             "orient": "top",
             "anchor": "start",
             "fontSize": 24

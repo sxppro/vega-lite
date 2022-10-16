@@ -11,7 +11,7 @@
       "hconcat": [
         {
           "title": {
-            "text": "Proportion of flights delayed (2005-2021)",
+            "text": "Flight delay proportion (2005-2021)",
             "orient": "top",
             "anchor": "start",
             "fontSize": 24
@@ -82,7 +82,7 @@
                 "tooltip": [
                   {
                     "field": "date",
-                    "timeUnit": "year",
+                    "timeUnit": "yearmonth",
                     "format": "%Y",
                     "title": "Year"
                   }
@@ -134,13 +134,9 @@
                 "tooltip": [
                   {
                     "field": "date",
-                    "timeUnit": "month",
-                    "title": "Month"
-                  },
-                  {
-                    "field": "date",
-                    "timeUnit": "year",
-                    "title": "Year"
+                    "type": "temporal",
+                    "title": "Time",
+                    "format": "%B %Y"
                   },
                   {
                     "field": "delay_carrier",
@@ -320,8 +316,9 @@
                 "tooltip": [
                   {
                     "field": "date",
-                    "timeUnit": "year",
-                    "title": "Year"
+                    "type": "temporal",
+                    "title": "Time",
+                    "format": "%B %Y"
                   },
                   {
                     "field": "delay_carrier",

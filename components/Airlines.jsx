@@ -41,6 +41,10 @@ const Airlines = () => {
             <Heading size={'lg'} mt={2}>
               Number of flights and on-time performance
             </Heading>
+            <Text fontStyle="italic">
+              Hover to see airline, on-time percentage and number of flights
+              operated
+            </Text>
             <Text fontSize={'lg'} mt={2}>
               One may think that the more flights an airline operates, the more
               difficult it is to achieve better on-time performance. However,{' '}
@@ -59,6 +63,7 @@ const Airlines = () => {
             <Heading size={'lg'} mt={2}>
               What are the most on-time airlines?
             </Heading>
+            <Text fontStyle="italic">Hover to see airline and ranking</Text>
             <Text fontSize={'lg'} mt={2}>
               <b>Hawaiian Airlines</b> has previously been the most on-time US
               airline, however, since 2021 <b>Endeavor Air</b> has taken over

@@ -94,7 +94,7 @@
               "field": "arr_flights",
               "type": "quantitative",
               "scale": {
-                "range": [0, 2048]
+                "range": [0, 8192]
               },
               "legend": {
                 "title": "Flights"
@@ -107,7 +107,7 @@
             "type": "text",
             "fontSize": 16,
             "align": "center",
-            "dy": -26
+            "dy": -20
           },
           "encoding": {
             "text": {
