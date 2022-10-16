@@ -1,4 +1,4 @@
-import { Heading, VStack, Text, Stack, Box, Center } from '@chakra-ui/react';
+import { Heading, VStack, Text, Stack, Box, Highlight } from '@chakra-ui/react';
 import Vis from './Vis';
 import StatsHighlight from './StatsHighlight';
 
@@ -70,16 +70,80 @@ const Airlines = () => {
             </Heading>
             <Text fontStyle="italic">Hover to see airline and ranking</Text>
             <Text fontSize={'lg'} mt={2}>
-              <b>Hawaiian Airlines</b> has previously been the most on-time US
-              airline, however, since 2021 <b>Endeavor Air</b> has taken over
-              that title. <b>Alaska Airlines</b> had also been consistently
-              placed 2nd and 3rd before dropping out of the top 3 in 2019.
+              <Highlight
+                query="Hawaiian Airlines"
+                styles={{
+                  px: '2',
+                  py: '1',
+                  rounded: 'full',
+                  fontWeight: 'bold',
+                  color: 'white',
+                  bg: '#e31a1c',
+                }}
+              >
+                Hawaiian Airlines
+              </Highlight>{' '}
+              has previously been the most on-time US airline, however, since
+              2021,{' '}
+              <Highlight
+                query="Endeavor Air"
+                styles={{
+                  px: '2',
+                  py: '1',
+                  rounded: 'full',
+                  fontWeight: 'bold',
+                  color: 'white',
+                  bg: '#33a02c',
+                }}
+              >
+                Endeavor Air
+              </Highlight>{' '}
+              has taken over that title.{' '}
+              <Highlight
+                query="Alaska Airlines"
+                styles={{
+                  px: '2',
+                  py: '1',
+                  rounded: 'full',
+                  fontWeight: 'bold',
+                  color: 'white',
+                  bg: '#1f78b4',
+                }}
+              >
+                Alaska Airlines
+              </Highlight>{' '}
+              had also been consistently placed 2nd and 3rd before dropping out
+              of the top 3 in 2019.
             </Text>
             <Text fontSize={'lg'} mt={2}>
               While we only have data for the year to July 2022, 2 new entrants
               are currently in 2nd and 3rd position for 2022—
-              <b>Horizon Air</b> and <b>Envoy Air</b>—which are both regional
-              airlines.
+              <Highlight
+                query="Horizon Air"
+                styles={{
+                  px: '2',
+                  py: '1',
+                  rounded: 'full',
+                  fontWeight: 'bold',
+                  bg: '#fdbf6f',
+                }}
+              >
+                Horizon Air
+              </Highlight>{' '}
+              and{' '}
+              <Highlight
+                query="Envoy Air"
+                styles={{
+                  px: '2',
+                  py: '1',
+                  rounded: 'full',
+                  fontWeight: 'bold',
+                  bg: '#fb9a99',
+                }}
+              >
+                Envoy Air
+              </Highlight>
+              —which are both regional airlines.
             </Text>
           </Box>
         </Stack>

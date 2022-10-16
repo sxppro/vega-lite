@@ -51,6 +51,11 @@ const TimePeriod = () => {
                   <Heading size={'lg'} mt={2} textAlign="left">
                     Yearly flight delays
                   </Heading>
+                  <Text fontStyle="italic" textAlign={'left'}>
+                    Hover charts to see detailed delay information, select a
+                    delay cause to focus on a specific one, click and drag on
+                    bottom chart to filter by time period
+                  </Text>
                   <Text fontSize={'lg'} mt={2} textAlign="left">
                     While{' '}
                     <Highlight
@@ -66,9 +71,22 @@ const TimePeriod = () => {
                       carrier
                     </Highlight>{' '}
                     delays generally make up a lower proportion of delays than
-                    the <b>National Aviation System</b>—which covers non-extreme
-                    weather, airport operations, heavy traffic volume and air
-                    traffic control—they overall cause longer delays.
+                    the{' '}
+                    <Highlight
+                      query="National Aviation System"
+                      styles={{
+                        px: '2',
+                        py: '1',
+                        rounded: 'full',
+                        fontWeight: 'bold',
+                        bg: '#2fddce',
+                      }}
+                    >
+                      National Aviation System
+                    </Highlight>
+                    —which covers non-extreme weather, airport operations, heavy
+                    traffic volume and air traffic control—they overall cause
+                    longer delays.
                   </Text>
                 </Box>
               </Stack>
@@ -91,12 +109,17 @@ const TimePeriod = () => {
                   <Heading size={'lg'} mt={2} textAlign="left">
                     Monthly flight delays
                   </Heading>
+                  <Text fontStyle="italic" textAlign={'left'}>
+                    Hover charts to see detailed delay information, select a
+                    delay cause to focus on a specific one, click and drag on
+                    bottom chart to filter by time period
+                  </Text>
                   <Text fontSize={'lg'} mt={2} textAlign="left">
-                    There appear to be some cyclical patterns going on, which we
-                    can confirm using the heatmap below. Generally, delays are
-                    highly correlated with each other, so increases in delays or
-                    delay minutes due to one specific delay cause will generally
-                    mean increases for other delay causes.
+                    There appear to be some <b>cyclical</b> patterns going on,
+                    which we can confirm using the heatmap below. Generally,
+                    delays are highly correlated with each other, so increases
+                    in delays or delay minutes due to one specific delay cause
+                    will generally mean increases for other delay causes.
                   </Text>
                 </Box>
                 <Box borderWidth={'1px'} borderRadius={12} p={4}>

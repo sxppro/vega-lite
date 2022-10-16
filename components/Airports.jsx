@@ -1,4 +1,4 @@
-import { Heading, VStack, Text, Stack, Box } from '@chakra-ui/react';
+import { Heading, VStack, Text, Stack, Box, Highlight } from '@chakra-ui/react';
 import Vis from './Vis';
 import StatsHighlight from './StatsHighlight';
 
@@ -94,14 +94,88 @@ const Airports = () => {
             </Text>
             <Text fontSize={'lg'} mt={2}>
               Interestingly, there are quite a few Hawaiian airports in these
-              rankings, namely <b>Kahului</b>, <b>Lihue</b> and{' '}
-              <b>Ellison Onizuka Kona</b>, each of which has appeared numerous
-              times in the top 3.
+              rankings, namely{' '}
+              <Highlight
+                query="Kahului"
+                styles={{
+                  px: '2',
+                  py: '1',
+                  rounded: 'full',
+                  fontWeight: 'bold',
+                  bg: '#fb8072',
+                }}
+              >
+                Kahului
+              </Highlight>
+              ,{' '}
+              <Highlight
+                query="Lihue"
+                styles={{
+                  px: '2',
+                  py: '1',
+                  rounded: 'full',
+                  fontWeight: 'bold',
+                  bg: '#80b1d3',
+                }}
+              >
+                Lihue
+              </Highlight>{' '}
+              and{' '}
+              <Highlight
+                query="Ellison Onizuka Kona"
+                styles={{
+                  px: '2',
+                  py: '1',
+                  rounded: 'full',
+                  fontWeight: 'bold',
+                  bg: '#ffffb3',
+                }}
+              >
+                Ellison Onizuka Kona
+              </Highlight>
+              , each of which has appeared numerous times in the top 3.
             </Text>
             <Text fontSize={'lg'} mt={2}>
-              As it stands, <b>Salt Lake City International</b> has the most
-              on-time flights for 2022, followed by <b>Hartsfield-Jackson</b>{' '}
-              and <b>San Francisco International</b>.
+              As it stands,{' '}
+              <Highlight
+                query="Salt Lake City International"
+                styles={{
+                  px: '2',
+                  py: '1',
+                  rounded: 'full',
+                  fontWeight: 'bold',
+                  bg: '#bc80bd',
+                }}
+              >
+                Salt Lake City International
+              </Highlight>{' '}
+              has the most on-time flights for 2022, followed by{' '}
+              <Highlight
+                query="Hartsfield-Jackson"
+                styles={{
+                  px: '2',
+                  py: '1',
+                  rounded: 'full',
+                  fontWeight: 'bold',
+                  bg: '#bebada',
+                }}
+              >
+                Hartsfield-Jackson
+              </Highlight>{' '}
+              and{' '}
+              <Highlight
+                query="San Francisco International"
+                styles={{
+                  px: '2',
+                  py: '1',
+                  rounded: 'full',
+                  fontWeight: 'bold',
+                  bg: '#ccebc5',
+                }}
+              >
+                San Francisco International
+              </Highlight>
+              .
             </Text>
           </Box>
         </Stack>
