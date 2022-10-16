@@ -28,7 +28,7 @@ const StatsHighlight = ({
               ) : (
                 ''
               )}
-              {helpText.avgText}
+              {helpText.avgText} (2021)
             </StatHelpText>
           ) : (
             ''
@@ -44,7 +44,7 @@ const StatsHighlight = ({
               ) : (
                 ''
               )}
-              {helpText.bestText}
+              {helpText.bestText} (2021)
             </StatHelpText>
           ) : (
             ''

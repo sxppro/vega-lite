@@ -68,7 +68,10 @@
                       }
                     }
                   ],
-                  "mark": "point"
+                  "mark": {
+                    "type": "point",
+                    "filled": true
+                  }
                 }
               ],
               "encoding": {
@@ -101,7 +104,7 @@
                   },
                   "legend": {
                     "title": "Delay Cause",
-                    "labelExpr": "datum.label === 'delay_carrier' ? 'Carrier' : datum.label === 'delay_late' ? 'Previous late aircraft' : datum.label === 'delay_nas' ? 'National Aviation System' : datum.label === 'delay_security' ? 'Security' : 'Weather'"
+                    "labelExpr": "datum.label === 'delay_carrier' ? 'Carrier' : datum.label === 'delay_late' ? 'Previous late aircraft' : datum.label === 'delay_nas' ? 'National Aaviation System' : datum.label === 'delay_security' ? 'Security' : 'Weather'"
                   }
                 },
                 "opacity": {

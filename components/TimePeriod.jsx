@@ -9,6 +9,7 @@ import {
   TabList,
   TabPanel,
   TabPanels,
+  Highlight,
 } from '@chakra-ui/react';
 import Vis from './Vis';
 
@@ -48,15 +49,26 @@ const TimePeriod = () => {
                 >
                   <Vis visId={'yearlyDelayCause'} height={'486px'} />
                   <Heading size={'lg'} mt={2} textAlign="left">
-                    Yearly Flight Delays
+                    Yearly flight delays
                   </Heading>
                   <Text fontSize={'lg'} mt={2} textAlign="left">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    Duis aute irure dolor in reprehenderit in voluptate velit
-                    esse cillum dolore eu fugiat nulla pariatur.
+                    While{' '}
+                    <Highlight
+                      query="carrier"
+                      styles={{
+                        px: '2',
+                        py: '1',
+                        rounded: 'full',
+                        fontWeight: 'bold',
+                        bg: '#a0e85b',
+                      }}
+                    >
+                      carrier
+                    </Highlight>{' '}
+                    delays generally make up a lower proportion of delays than
+                    the <b>National Aviation System</b>—which covers non-extreme
+                    weather, airport operations, heavy traffic volume and air
+                    traffic control—they overall cause longer delays.
                   </Text>
                 </Box>
               </Stack>
@@ -77,7 +89,7 @@ const TimePeriod = () => {
                 >
                   <Vis visId={'monthlyDelayCause'} height={'486px'} />
                   <Heading size={'lg'} mt={2} textAlign="left">
-                    Monthly Flight Delays
+                    Monthly flight delays
                   </Heading>
                   <Text fontSize={'lg'} mt={2} textAlign="left">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
@@ -89,9 +101,13 @@ const TimePeriod = () => {
                   </Text>
                 </Box>
                 <Box borderWidth={'1px'} borderRadius={12} p={4}>
-                  <Vis visId={'carrierOntimeHeatmap'} />
+                  <Vis
+                    visId={'carrierOntimeHeatmap'}
+                    width={{ base: '100%', md: '50%' }}
+                    height={'480px'}
+                  />
                   <Heading size={'lg'} mt={8} textAlign="left">
-                    Monthly On-time Arrivals (2005-2021)
+                    Monthly proportion of on-time flights
                   </Heading>
                   <Text fontSize={'lg'} mt={2} textAlign="left">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed

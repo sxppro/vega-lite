@@ -25,16 +25,7 @@ const Airports = () => {
           change={{ avgChange: 'decrease', bestChange: 'decrease' }}
           helpText={{ avgText: '-4.1%', bestText: '-3.4%' }}
         />
-        <Box
-          _hover={{
-            boxShadow: 'md',
-            transition: 'box-shadow 0.1s linear',
-          }}
-          borderWidth={'1px'}
-          borderRadius={12}
-          p={4}
-          w={'inherit'}
-        >
+        <Box borderWidth={'1px'} borderRadius={12} p={4} w={'inherit'}>
           <Vis visId={'airportFlightsMap'} height={'540px'} />
           <Heading size={'lg'} pt={2}>
             Airports ranked by number of flights
@@ -95,22 +86,22 @@ const Airports = () => {
           >
             <Vis visId={'airportOntimeRanking'} />
             <Heading size={'lg'} mt={2}>
-              Airports with the most on-time flights
+              What are the most on-time airports?
             </Heading>
             <Text fontStyle="italic">
-              <b>Airports with over 10,000 flights a year</b>, hover to see more
-              precise on-time percentage
+              <b>Airports with over 10,000 flights a year</b>, hover to see
+              airport and ranking
             </Text>
             <Text fontSize={'lg'} mt={2}>
-              Salt Lake City International (<b>SLC</b>) handles the most on-time
-              flights with over <b>88%</b> of flights arriving within 15 minutes
-              of their scheduled arrival. <b>SLC</b> has historically
-              consistently ranked high for on-time performance.
+              Interestingly, there are quite a few Hawaiian airports in these
+              rankings, namely <b>Kahului</b>, <b>Lihue</b> and{' '}
+              <b>Ellison Onizuka Kona</b>, each of which has appeared numerous
+              times in the top 3.
             </Text>
             <Text fontSize={'lg'} mt={2}>
-              Airports with greater traffic are not absent from this chart. The
-              aforementioned busiest airport, <b>ATL</b>, is ranked 2nd for
-              timely flights.
+              As it stands, <b>Salt Lake City International</b> has the most
+              on-time flights for 2022, followed by <b>Hartsfield-Jackson</b>{' '}
+              and <b>San Francisco International</b>.
             </Text>
           </Box>
         </Stack>

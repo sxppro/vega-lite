@@ -52,6 +52,11 @@ const Airlines = () => {
               flights of <b>Southwest</b>, yet has significantly worse on-time
               performance.
             </Text>
+            <Text fontSize={'lg'} mt={2}>
+              Overall, majority of airlines ensure at least <b>75%</b> of their
+              flights are on-time, although there is additional variation in
+              performance for airlines operating fewer flights.
+            </Text>
           </Box>
           <Box
             borderWidth={'1px'}
@@ -67,12 +72,14 @@ const Airlines = () => {
             <Text fontSize={'lg'} mt={2}>
               <b>Hawaiian Airlines</b> has previously been the most on-time US
               airline, however, since 2021 <b>Endeavor Air</b> has taken over
-              that title.
+              that title. <b>Alaska Airlines</b> had also been consistently
+              placed 2nd and 3rd before dropping out of the top 3 in 2019.
             </Text>
             <Text fontSize={'lg'} mt={2}>
-              Taking into account we only have data for the year until July
-              2022, 2 new entrants have taken 2nd and 3rd place for 2022—
-              <b>Horizon Air</b> and <b>Envoy Air</b>—both regional airlines.
+              While we only have data for the year to July 2022, 2 new entrants
+              are currently in 2nd and 3rd position for 2022—
+              <b>Horizon Air</b> and <b>Envoy Air</b>—which are both regional
+              airlines.
             </Text>
           </Box>
         </Stack>
