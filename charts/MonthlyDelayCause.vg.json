@@ -11,7 +11,7 @@
       "hconcat": [
         {
           "title": {
-            "text": "Flight delay proportion (2005-2021)",
+            "text": "Flight delay proportion (2005-2022)",
             "orient": "top",
             "anchor": "start",
             "fontSize": 24
@@ -211,7 +211,7 @@
         },
         {
           "title": {
-            "text": "Flight delay minutes (2005-2021)",
+            "text": "Flight delay minutes (2005-2022)",
             "orient": "top",
             "anchor": "start",
             "fontSize": 24

@@ -143,7 +143,7 @@ const Airlines = () => {
               >
                 Envoy Air
               </Highlight>
-              —which are both regional airlines.
+              . Curiously, all top 3 airlines in 2022 are regional airlines.
             </Text>
           </Box>
         </Stack>

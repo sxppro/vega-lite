@@ -58,7 +58,7 @@ const Airports = () => {
             p={4}
             w={{ base: '100%', md: '50%' }}
           >
-            <Vis visId={'bestAirports'} />
+            <Vis visId={'airportOntimeBar'} />
             <Heading size={'lg'} mt={2}>
               Airports with the most on-time flights
             </Heading>

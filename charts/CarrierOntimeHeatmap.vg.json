@@ -53,16 +53,16 @@
     },
     "tooltip": [
       {
-        "field": "year",
-        "type": "ordinal",
-        "timeUnit": "year",
-        "title": "Year"
-      },
-      {
         "field": "month",
         "type": "ordinal",
         "timeUnit": "month",
         "title": "Month"
+      },
+      {
+        "field": "year",
+        "type": "ordinal",
+        "timeUnit": "year",
+        "title": "Year"
       },
       {
         "field": "on_time",
