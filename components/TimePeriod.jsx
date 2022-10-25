@@ -46,6 +46,10 @@ const TimePeriod = () => {
                   borderWidth={'1px'}
                   borderRadius={12}
                   p={4}
+                  transition={'box-shadow 0.3s'}
+                  _hover={{
+                    boxShadow: 'lg',
+                  }}
                 >
                   <Vis visId={'yearlyDelayCause'} height={'486px'} />
                   <Heading size={'lg'} mt={2} textAlign="left">
@@ -104,6 +108,10 @@ const TimePeriod = () => {
                   borderWidth={'1px'}
                   borderRadius={12}
                   p={4}
+                  transition={'box-shadow 0.3s'}
+                  _hover={{
+                    boxShadow: 'lg',
+                  }}
                 >
                   <Vis visId={'monthlyDelayCause'} height={'486px'} />
                   <Heading size={'lg'} mt={2} textAlign="left">
@@ -122,7 +130,15 @@ const TimePeriod = () => {
                     will generally mean increases for other delay causes.
                   </Text>
                 </Box>
-                <Box borderWidth={'1px'} borderRadius={12} p={4}>
+                <Box
+                  borderWidth={'1px'}
+                  borderRadius={12}
+                  p={4}
+                  transition={'box-shadow 0.3s'}
+                  _hover={{
+                    boxShadow: 'lg',
+                  }}
+                >
                   <Vis
                     visId={'carrierOntimeHeatmap'}
                     width={{ base: '100%', md: '50%' }}

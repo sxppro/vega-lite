@@ -25,7 +25,16 @@ const Airports = () => {
           change={{ avgChange: 'decrease', bestChange: 'decrease' }}
           helpText={{ avgText: '-4.1%', bestText: '-3.4%' }}
         />
-        <Box borderWidth={'1px'} borderRadius={12} p={4} w={'inherit'}>
+        <Box
+          borderWidth={'1px'}
+          borderRadius={12}
+          p={4}
+          w={'inherit'}
+          transition={'box-shadow 0.3s'}
+          _hover={{
+            boxShadow: 'lg',
+          }}
+        >
           <Vis visId={'airportFlightsMap'} height={'540px'} />
           <Heading size={'lg'} pt={2}>
             Airports ranked by number of flights
@@ -57,6 +66,10 @@ const Airports = () => {
             borderRadius={12}
             p={4}
             w={{ base: '100%', md: '50%' }}
+            transition={'box-shadow 0.3s'}
+            _hover={{
+              boxShadow: 'lg',
+            }}
           >
             <Vis visId={'airportOntimeBar'} />
             <Heading size={'lg'} mt={2}>
@@ -83,6 +96,10 @@ const Airports = () => {
             borderRadius={12}
             p={4}
             w={{ base: '100%', md: '50%' }}
+            transition={'box-shadow 0.3s'}
+            _hover={{
+              boxShadow: 'lg',
+            }}
           >
             <Vis visId={'airportOntimeRanking'} />
             <Heading size={'lg'} mt={2}>

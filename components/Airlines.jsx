@@ -36,6 +36,10 @@ const Airlines = () => {
             borderRadius={12}
             p={4}
             w={{ base: '100%', md: '50%' }}
+            transition={'box-shadow 0.3s'}
+            _hover={{
+              boxShadow: 'lg',
+            }}
           >
             <Vis visId={'airlineOntimeScatter'} />
             <Heading size={'lg'} mt={2}>
@@ -63,6 +67,10 @@ const Airlines = () => {
             borderRadius={12}
             p={4}
             w={{ base: '100%', md: '50%' }}
+            transition={'box-shadow 0.3s'}
+            _hover={{
+              boxShadow: 'lg',
+            }}
           >
             <Vis visId={'airlineOntimeRanking'} />
             <Heading size={'lg'} mt={2}>
